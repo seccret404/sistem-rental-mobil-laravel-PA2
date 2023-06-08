@@ -29,6 +29,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/4.5.6/css/ionicons.min.css">
     <link rel="stylesheet" href="carousel/css/style.css">
 
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
@@ -97,32 +102,7 @@
                             </div>
                         </div>
 
-                        <form class="trip-form">
-                            <div class="r0w">
-                                <div class="col-12">
-                                    @if (Session::get('success'))
-                                    <div class="alert alert-success">
 
-                                        {{Session::get('success')}}
-                                    </div>
-                                    @endif
-                                    @if (Session::get('error'))
-                                    <div class="alert alert-danger">
-
-                                        {{ Session::get('error')}}
-
-                                    </div>
-                                    @endif
-                                </div>
-                                <div class="row">
-                                    <div class="col-12 text-center">
-                                       rtyuilo;
-                                    </div>
-                                </div>
-                            </div>
-
-
-                        </form>
 
                     </div>
                 </div>
@@ -132,7 +112,7 @@
 
 
 
-        <div class="site-section">
+        <div class="site-section bg-white" data-aos="fade-up">
             <div class="container">
                 <h2 class="section-heading"><strong>Cara Menggunakan?</strong></h2>
                 <p class="mb-5">Ikuti Langkah Mudah Berikut:</p>
@@ -263,7 +243,7 @@
                 </div>
                 <div class="row">
                     <div class="col-4">
-                        <p><a href="/list" class="btn btn-primary">Lihat Lebih Banyak</a></p>
+                        <p><a href="/list" class="btn btn-primary" data-aos="zoom-out">Lihat Lebih Banyak</a></p>
 
                     </div>
                 </div>
@@ -283,7 +263,7 @@
                 <div class="row">
                     <div class="col-lg-4 mb-5">
                         <div class="service-1 dark">
-                            <span class="service-1-icon bg-white">
+                            <span class="service-1-icon bg-white" data-aos="zoom-in">
                                 <span class="icon-car"></span>
                             </span>
                             <div class="service-1-contents">
@@ -295,7 +275,7 @@
                     </div>
                     <div class="col-lg-4 mb-5">
                         <div class="service-1 dark">
-                            <span class="service-1-icon bg-info">
+                            <span class="service-1-icon bg-info" data-aos="zoom-in">
                                 <span class="icon-person"></span>
                             </span>
                             <div class="service-1-contents">
@@ -307,7 +287,7 @@
                     </div>
                     <div class="col-lg-4 mb-5">
                         <div class="service-1 dark">
-                            <span class="service-1-icon bg-warning">
+                            <span class="service-1-icon bg-warning" data-aos="zoom-in">
                                 <span class="icon-money"></span>
                             </span>
                             <div class="service-1-contents">
@@ -323,7 +303,7 @@
 
 
 
-        <section class="ftco-section">
+        <section class="ftco-section" style="margin-top:-90px!important">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 text-center">
@@ -445,6 +425,10 @@
         </footer>
 
     </div>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/popper.min.js"></script>
