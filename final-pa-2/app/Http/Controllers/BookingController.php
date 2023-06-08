@@ -30,8 +30,6 @@ class BookingController extends Controller
         $out = $request->booking_out;
         $pesan = $request->pesan;
 
-        $format = "Horas MarsadaTri Saya : $nama No.Hp : $hp Alamat :$alamat Ingin memesan mobil :$mobil Tanggal berangkat : $in Tanggal Kembali :$out Terimakasih";
-
         //  $telepon = +6282288440696;
 
 
@@ -39,7 +37,6 @@ class BookingController extends Controller
         // $encryptedPhone = Crypt::encryptString($telepon);
 
         // Membuat tautan API WhatsApp
-        $apiUrl = "https://api.whatsapp.com/send?phone=+6288264210475&text=" . urlencode($format);
 
 //         return redirect($apiUrl);
 //     }
@@ -57,9 +54,11 @@ class BookingController extends Controller
             'pesan'=>$pesan
         ];
 
+        $idPemesanan = DB::table('pemesanan')->insertGetId($data);
+        $format = "H O R A S M A R S A D A T R I P\nNo.Pesanan: $idPemesanan\Nama : $nama\nNo.Hp : $hp\nAlamat :$alamat\nIngin memesan mobil :$mobil\nTanggal berangkat : $in\nTanggal Kembali :$out\nTerimakasih";
 
 
-        $simpan = DB::table('pemesanan')->insert($data);
+        $apiUrl = "https://api.whatsapp.com/send?phone=+6288264210475&text=" . urlencode($format);
 
         return redirect($apiUrl);
 

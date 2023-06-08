@@ -18,32 +18,6 @@
     <div class="container-xl">
         <div class="row row-cards">
             <div class="col-lg-8">
-                <div class="row ">
-                    <div class="col-6">
-                        <div class="card">
-                            <div class="card-body text-center">
-                                <div class="mb-3">
-                                    <span class="avatar avatar-xl "
-                                        style="background-image: url(tabler/static/avatars/alphard.webp)"></span>
-                                </div>
-                                <div class="card-title mb-1">Alphard</div>
-                                <div class="text-muted">High Car</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6">
-                        <div class="card">
-                            <div class="card-body text-center">
-                                <div class="mb-3">
-                                    <span class="avatar avatar-xl rounded"
-                                        style="background-image: url(tabler/static/avatars/avanza.webp)"></span>
-                                </div>
-                                <div class="card-title mb-1">Avanza</div>
-                                <div class="text-muted">Top Car</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <div class="row mt-5">
                     <div class="col-6">
                         <div class="card">
@@ -84,42 +58,6 @@
                     </div>
                 </div>
 
-            </div>
-            <div class="col-4">
-                <div class="card" style="height: 28rem">
-                    <h3 class="text-center">Histori Feedback</h3>
-                    <div class="card-body card-body-scrollable card-body-scrollable-shadow">
-                        <div class="divide-y">
-                            @foreach ($data as $item)
-
-
-                            <div>
-                                <div class="row">
-                                    <div class="col-auto">
-                                        <span class="avatar"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user-check" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                            <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0"></path>
-                                            <path d="M6 21v-2a4 4 0 0 1 4 -4h4"></path>
-                                            <path d="M15 19l2 2l4 -4"></path>
-                                         </svg></span>
-                                    </div>
-                                    <div class="col">
-                                        <div class="text-truncate">
-                                            <strong>{{$item->nama_pemesan}}</strong> {{$item->pesan}} <strong> {{$item->nama_mobil}}
-                                            </strong>
-                                        </div>
-                                        <div class="text-muted">{{$item->created_at}}</div>
-                                    </div>
-                                    <div class="col-auto align-self-center">
-                                        <div class="badge bg-primary"></div>
-                                    </div>
-                                </div>
-                            </div>
-                    @endforeach
-
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>

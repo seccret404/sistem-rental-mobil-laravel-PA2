@@ -169,7 +169,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="/mobiladd" enctype="multipart/form-data" method="POST" id="form_karyawan">
+                <form action="{{ url('/mobiladd') }}" enctype="multipart/form-data" method="POST" id="form_karyawan">
                     @csrf
                     <div class="row">
                         <div class="col-12">

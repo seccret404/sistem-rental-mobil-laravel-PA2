@@ -18,13 +18,14 @@ class MobilController extends Controller
         $request->validate([
             'nama_mobil' => ['required','max:8000'],
             'lokasi'=>['required'],
-            'no_plat'=>['required','max:8'],
+            'no_plat'=>['required'],
             'kapasitas'=>['required'],
             'tipe_mobil'=>['required'],
             'ac'=>['required'],
             'gambar' => 'required|image|mimes:jpeg,png,jpg|',
 
         ]);
+        // return $request;
         $file = $request->file('gambar');
         $namafile = $file->getClientOriginalName();
         $tujuanFile = 'asset/mobil';
@@ -42,9 +43,7 @@ class MobilController extends Controller
         $mobil->save();
 
         return redirect('/mobil')->with(['success'=>"Mobil berhasil ditamabh"]);
-
-
-            }
+}
 
         public function edit($id_mobil){
 

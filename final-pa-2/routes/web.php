@@ -57,7 +57,10 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
         Route::get('/feedback',[AdminController::class,'feed']);
         Route::post('/feedback/{id_feed}/delete', [AdminController::class, 'delete']);
 
-
+        //pemesanan
+        Route::get('/pemesanan', [PemesananController::class, 'index'])->name('pemesanan');
+        Route::get('/pemesanan/{id}', [PemesananController::class, 'detail'])->name('detail.pemesanan');
+        Route::post('/pemesanan-status/{idPemesanan}', [PemesananController::class, 'status'])->name('status.pemesanan');
 
 
 });
