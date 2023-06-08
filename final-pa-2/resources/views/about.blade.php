@@ -6,6 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="fonts/icomoon/style.css">
@@ -98,17 +99,19 @@
 
 
 
-    <div class="site-section">
+    <div class="site-section bg-white">
       <div class="container">
         <div class="row">
           <div class="col-lg-6 mb-5 mb-lg-0 order-lg-2">
             <img src="images/hero_2.jpg" alt="Image" class="img-fluid rounded" data-aos="fade-down-left">
           </div>
           <div class="col-lg-4 mr-auto" data-aos="zoom-in-up">
-            <h2>Car Company</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit suscipit, repudiandae similique accusantium eius nulla quam laudantium sequi.</p>
-            <p>Debitis voluptates corporis saepe molestias tenetur ab quae, quo earum commodi, laborum dolore, fuga aliquid delectus cum ipsa?</p>
-          </div>
+            <h2>Mengapa Harus MarsadaTrip</h2>
+            <p>MarsadaTrip menyediakan kendaraan yang selalu prima, siap mengantar ke seluruh tujuan.
+                 Banyak pelanggan yang menggunakan jasa rental ini untuk keperluan dinas, pernikahan, wisuda, dan berwisata.
+                  Semua kendaraan yang tersedia selalu bersih dan wangi.
+                 Hal ini membuat penumpang akan nyaman berkendara dan menempuh perjalanan dengan menggunakan unit dari rental mobil Toba..</p>
+         </div>
         </div>
       </div>
     </div>
@@ -162,55 +165,11 @@
               </div>
             </div>
           </div>
-
-          <div class="col-lg-4 col-md-6 mb-5">
-            <div class="post-entry-1 h-100 person-1">
-
-                <img src="images/person_4.jpg" alt="Image"
-                 class="img-fluid">
-
-              <div class="post-entry-1-contents">
-                <span class="meta">Founder</span>
-                <h2>James Doe</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, sapiente.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-5">
-            <div class="post-entry-1 h-100 person-1">
-
-                <img src="images/person_5.jpg" alt="Image"
-                 class="img-fluid">
-
-              <div class="post-entry-1-contents">
-                <span class="meta">Founder</span>
-                <h2>James Doe</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, sapiente.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-5">
-            <div class="post-entry-1 h-100 person-1">
-
-                <img src="images/person_1.jpg" alt="Image"
-                 class="img-fluid">
-
-              <div class="post-entry-1-contents">
-                <span class="meta">Founder</span>
-                <h2>James Doe</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, sapiente.</p>
-              </div>
-            </div>
-          </div>
-
-
         </div>
       </div>
     </div>
 
-    <div class="site-section">
+    <div class="site-section bg-white">
       <div class="container">
         <div class="row">
           <div class="col-lg-6 mb-5 mb-lg-0">
@@ -241,9 +200,9 @@
     </div>
 
 
-      <footer class="site-footer">
-        <div class="container">
-          <div class="row">
+      <footer class="site-footer bg-info">
+        <div class="container bg-info">
+          {{-- <div class="row">
             <div class="col-lg-3">
               <h2 class="footer-heading mb-4">About Us</h2>
               <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
@@ -298,14 +257,13 @@
                 </div>
               </div>
             </div>
-          </div>
-          <div class="row pt-5 mt-5 text-center">
+          </div> --}}
+          <div class="row text-center">
             <div class="col-md-12">
-              <div class="border-top pt-5">
+              <div class="border-top ">
                 <p>
               <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-              Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart text-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
-              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+              Copyright &copy;marsadatrip <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
               </p>
               </div>
             </div>

@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
 
     <link rel="stylesheet" href="fonts/icomoon/style.css">
 
@@ -95,7 +96,7 @@
 
 
 
-    <div class="site-section bg-light" id="contact-section">
+    <div class="site-section bg-white" id="contact-section">
       <div class="container">
         <div class="row justify-content-center text-center">
         <div class="col-7 text-center mb-5">
@@ -147,38 +148,43 @@
               </div>
             </form>
           </div>
-          <div class="col-lg-4 ml-auto">
-            <div class="bg-white p-3 p-md-5">
+          <div class="col-lg-4 ml-auto bg-light">
+            <div class="bg-light p-3 p-md-5">
               <h3 class="text-black mb-4">Info kontak</h3>
               <ul class="list-unstyled footer-link">
                 <li class="d-block mb-3">
                   <span class="d-block text-black">Alamat:</span>
-                  <span>34 Street Name, City Name Here, United States</span></li>
-                <li class="d-block mb-3"><span class="d-block text-black">Telepon:</span><span>+1 242 4942 290</span></li>
-                <li class="d-block mb-3"><span class="d-block text-black">Email:</span><span>info@yourdomain.com</span></li>
+                  <span>Jl. Siraja Deang Toruan, Ompu Raja Hutapea, Kec. Laguboti, Toba, Sumatera Utara 22381
+                </span></li>
+                <li class="d-block mb-3"><span class="d-block text-black">Telepon:</span><span>0853 7356 6250
+                </span></li>
+                <li class="d-block mb-3"><span class="d-block text-black">Media Sosial:</span><span>
+
+                    <ul class="list-unstyled social">
+                        <li><a href="https://www.facebook.com/profile.php?id=100079523299775"><span class="icon-facebook"></span></a></li>
+                        <li><a href="https://www.instagram.com/marsada.trip/ "><span class="icon-instagram"></span></a></li>
+                      </ul>
+                </span></li>
               </ul>
             </div>
           </div>
         </div>
       </div>
     </div>
-
-
-
+    <hr>
       <footer class="site-footer">
         <div class="container">
           <div class="row">
-            <div class="col-lg-3">
+            {{-- <div class="col-lg-3">
               <h2 class="footer-heading mb-4">About Us</h2>
               <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
               <ul class="list-unstyled social">
-                <li><a href="#"><span class="icon-facebook"></span></a></li>
-                <li><a href="#"><span class="icon-instagram"></span></a></li>
-                <li><a href="#"><span class="icon-twitter"></span></a></li>
-                <li><a href="#"><span class="icon-linkedin"></span></a></li>
+                <li><a href="https://www.facebook.com/profile.php?id=100079523299775"><span class="icon-facebook"></span></a></li>
+                <li><a href="https://www.instagram.com/marsada.trip/ "><span class="icon-instagram"></span></a></li>
+
               </ul>
-            </div>
-            <div class="col-lg-8 ml-auto">
+            </div> --}}
+            {{-- <div class="col-lg-8 ml-auto">
               <div class="row">
                 <div class="col-lg-3">
                   <h2 class="footer-heading mb-4">Quick Links</h2>
@@ -221,14 +227,14 @@
                   </ul>
                 </div>
               </div>
-            </div>
+            </div> --}}
           </div>
-          <div class="row pt-5 mt-5 text-center">
+          <div class="row text-center">
             <div class="col-md-12">
-              <div class="border-top pt-5">
+              <div class="border-top ">
                 <p>
               <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-              Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart text-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
+              Copyright &copy;marsadatrip
               <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
               </p>
               </div>
