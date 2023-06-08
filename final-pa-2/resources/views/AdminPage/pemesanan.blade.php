@@ -5,7 +5,7 @@
         <div class="row g-2 align-items-center">
             <div class="col">
                 <div class="page-pretitle">
-                    Pemesanan
+
                 </div>
                 <h2 class="page-title">
                     Data Pemesanan
@@ -47,7 +47,7 @@
                                             <th>Nama Mobil</th>
                                             <th>Tanggal Mulai</th>
                                             <th>Tanggal Akhir</th>
-                                            <th>Aksi</th>
+                                            <th>Status</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -62,14 +62,18 @@
                                             <td>{{$item->booking_in}}</td>
                                             <td>{{$item->booking_out}}</td>
                                             <td>
-                                                <a href="{{ url('/pemesanan/'.$item->id_pesanan) }}"><button type="submit" class="btn btn-primary">Detail</button></a>
+                                                @if($item->status == 0)
+                                                    <a href="{{ url('/pemesanan/'.$item->id_pesanan) }}"><button type="submit" class="btn btn-primary">Detail</button></a>
+                                                @else
+                                                    <button type="submit" class="btn btn-primary" disabled >Terkonfirmasi</button>
+                                                @endif
                                             </td>
                                         </tr>
                                         @php
                                             $counter++;
                                         @endphp
                                         @endforeach
-                                        
+
                                     </tbody>
                             </table>
                         </div>

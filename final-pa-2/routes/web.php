@@ -22,7 +22,7 @@ use App\Http\Controllers\AdministrasiController;
 |
 */
 //guest
-    Route::get('/',[AuthController::class,'index'])->name('login');
+    Route::get('/',[AuthController::class,'index'])->name('login')->middleware('guest');
     Route::post('/loginlah',[AuthController::class,'loginlah']);
     Route::post('/logout', [AuthController:: class, 'logout']);
     Route::get('/register',[RegisterController::class,'register']);

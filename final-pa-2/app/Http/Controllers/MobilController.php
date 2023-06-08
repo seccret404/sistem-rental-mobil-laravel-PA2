@@ -42,7 +42,7 @@ class MobilController extends Controller
         $mobil->gambar = $namafile;
         $mobil->save();
 
-        return redirect('/mobil')->with(['success'=>"Mobil berhasil ditamabh"]);
+        return redirect('/mobil')->with(['success'=>"Mobil berhasil ditambah"]);
 }
 
         public function edit($id_mobil){

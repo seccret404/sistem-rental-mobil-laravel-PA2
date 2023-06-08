@@ -13,8 +13,9 @@ class AdministrasiController extends Controller
         $nama = DB::table('mobil')->get();
         $admin = DB::table('administrasi')->get();
         $tp = DB::table('administrasi')->sum('pengeluaran');
+        $profit = DB::table('administrasi')->sum('profit');
 
-        return view('AdminPage.administrasi',compact('nama','admin','tp'));
+        return view('AdminPage.administrasi',compact('nama','admin','tp','profit'));
     }
 
     public function adpros(Request $requset){
@@ -28,6 +29,7 @@ class AdministrasiController extends Controller
         $hb = $requset->harga_beli;
         $p = $requset->pengeluaran;
         $des = $requset->deskripsi;
+        $profit = $hj - $p;
 
         $data = [
             'nama_rentaler'=>$costumer,
@@ -35,6 +37,7 @@ class AdministrasiController extends Controller
             'dana_dp'=>$dp,
             'harga_jual'=>$hj,
             'asal_unit'=>$as,
+            'profit'=>$profit,
             'sopir'=>$sopir,
             'tipe_mobil'=>$tm,
             'harga_beli'=>$hb,

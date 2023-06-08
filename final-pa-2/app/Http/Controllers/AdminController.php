@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Mobil;
+use App\Models\Pemesanan;
 use App\Models\Testimoni;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -11,7 +13,10 @@ class AdminController extends Controller
     public function index(){
         $tp = DB::table('administrasi')->sum('pengeluaran');
         $data = DB::table('pemesanan')->latest()->get();
-        return view('AdminPage.dashboard',compact('tp','data'));
+        $profit = DB::table('administrasi')->sum('profit');
+        $mobil = Mobil::count();
+        $pemesanan = Pemesanan::where('status',1)->count();
+        return view('AdminPage.dashboard',compact('tp','data','profit','mobil','pemesanan'));
     }
 
 

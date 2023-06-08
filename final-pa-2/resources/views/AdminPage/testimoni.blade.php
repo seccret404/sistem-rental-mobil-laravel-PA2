@@ -5,7 +5,7 @@
         <div class="row g-2 align-items-center">
             <div class="col">
                 <div class="page-pretitle">
-                    Testimoni
+                   
                 </div>
                 <h2 class="page-title">
                     Data Testimoni

@@ -33,19 +33,19 @@
     <script src="{{asset('tabler/dist/js/demo-theme.min.js?1674944402')}}"></script>
     <div class="page page-center">
       <div class="container container-normal py-4">
-        <div class="row align-items-center g-4 mt-5">
+        <div class="row align-items-center g-4 mt-2">
           <div class="col-lg">
             <div class="container-tight">
 
-              <div class="card card-md">
+              <div class="card card-md"height="350px">
                 <div class="card-body">
                     <div class="text-center mb-4">
                 <a href="." class="navbar-brand navbar-brand-autodark"><img src="marsada.png" height="170px" alt=""></a>
               </div>
                   <h2 class="h2 text-center mb-4">Login to your account</h2>
                  @if (Session::get('warning'))
-                 <div class="alert bg-warning">
-                    <p>{{Session::get('warning')}}</p>
+                 <div class="alert bg-danger">
+                    <p class="text-white">{{Session::get('warning')}}</p>
                  </div>
 
                  @endif
@@ -71,12 +71,7 @@
                         </span>
                       </div>
                     </div>
-                    <div class="mb-2">
-                      <label class="form-check">
-                        <input type="checkbox" class="form-check-input"/>
-                        <span class="form-check-label">Ingat saya</span>
-                      </label>
-                    </div>
+
                     <div class="form-footer">
                       <button type="submit" class="btn btn-primary w-100">Masuk</button>
                     </div>
@@ -86,7 +81,7 @@
                   </form>
                 </div>
                 {{-- <div class="hr-text">or</div> --}}
-            
+
               </div>
 
             </div>

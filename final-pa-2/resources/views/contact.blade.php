@@ -2,7 +2,8 @@
 <html lang="en">
 
   <head>
-    <title>CarRental &mdash; Free Website Template by Colorlib</title>
+    <title>MarsadaTrip</title>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -55,7 +56,7 @@
 
               <span class="d-inline-block d-lg-none"><a href="#" class=" site-menu-toggle js-menu-toggle py-5 "><span class="icon-menu h3 text-black"></span></a></span>
 
-              <nav class="site-navigation text-right ml-auto d-none d-lg-block" role="navigation">
+              <nav class="site-navigation text-right ml-auto d-none d-lg-block fixed-top" role="navigation">
                 <ul class="site-menu main-menu js-clone-nav ml-auto ">
                     <li class="active"><a href="/home" class="nav-link">Beranda</a></li>
                     <li><a href="/list" class="nav-link">Mobil</a></li>
