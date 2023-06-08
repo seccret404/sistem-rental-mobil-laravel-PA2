@@ -50,7 +50,7 @@
                                     </svg>Tambah Mobil </a>
                             </div>
                         </div>
-                        <div class="row mt-2">
+                        {{-- <div class="row mt-2">
                             <div class="col-12">
                                 <form action="/karyawan" method="get">
                                     <div class="row">
@@ -79,7 +79,7 @@
 
                                 </form>
                             </div>
-                        </div>
+                        </div> --}}
 
 
                         <div class="row mt-4">
