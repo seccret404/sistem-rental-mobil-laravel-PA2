@@ -62,7 +62,11 @@
                                             <td>{{$item->booking_in}}</td>
                                             <td>{{$item->booking_out}}</td>
                                             <td>
-                                                <a href="{{ url('/pemesanan/'.$item->id_pesanan) }}"><button type="submit" class="btn btn-primary">Detail</button></a>
+                                                @if($item->status == 0)
+                                                    <a href="{{ url('/pemesanan/'.$item->id_pesanan) }}"><button type="submit" class="btn btn-primary">Detail</button></a>
+                                                @else
+                                                    <button type="button" disabled class="btn btn-success">Terkonfirmasi</button></a>
+                                                @endif
                                             </td>
                                         </tr>
                                         @php

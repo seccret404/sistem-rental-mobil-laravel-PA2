@@ -42,14 +42,10 @@
                                                 <td>{{ $idPemesanan->booking_out }}</td>
                                             </tr>
                                         </table>
-                                        @if($idPemesanan->status == 0) 
-                                            <form action="{{ url('/pemesanan-status/'.$idPemesanan->id_pesanan) }}" method="POST">
-                                                @csrf
-                                                <button type="submit">Confirm</button>
-                                            </form>
-                                        @else
-                                            <button type="button" disabled  class="btn btn-success">Confirm</button>
-                                        @endif
+                                        <form action="{{ url('/pemesanan-status/'.$idPemesanan->id_pesanan) }}" method="POST">
+                                            @csrf
+                                            <button type="submit">Confirm</button>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
