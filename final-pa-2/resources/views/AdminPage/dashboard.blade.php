@@ -5,7 +5,7 @@
         <div class="row g-2 align-items-center">
             <div class="col">
                 <div class="page-pretitle">
-                    Data
+
                 </div>
                 <h2 class="page-title">
                     MarsadaTrip
@@ -17,9 +17,9 @@
 <div class="page-body">
     <div class="container-xl">
         <div class="row row-cards">
-            <div class="col-lg-8">
-                <div class="row mt-5">
-                    <div class="col-6">
+            <div class="col">
+                <div class="row mt-2">
+                    <div class="col-3">
                         <div class="card">
                             <div class="card-body text-center">
                                 <div class="mb-3">
@@ -34,12 +34,12 @@
                                             <path d="M5 15v1m0 -8v1"></path>
                                          </svg></span>
                                 </div>
-                                <div class="card-title mb-1">Rp.5.000.000</div>
+                                <div class="card-title mb-1">Rp.{{number_format($profit)}}</div>
                                 <div class="text-muted">Profit Bulan ini</div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-6">
+                    <div class="col-3">
                         <div class="card">
                             <div class="card-body text-center">
                                 <div class="mb-3">
@@ -53,6 +53,41 @@
                                 </div>
                                 <div class="card-title mb-1">Rp.{{number_format($tp)}}</div>
                                 <div class="text-muted">Pengeluaran Bulan ini</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="card">
+                            <div class="card-body text-center">
+                                <div class="mb-3">
+                                    <span class="avatar avatar-xl rounded bg-info">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-car" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                            <path d="M7 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path>
+                                            <path d="M17 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path>
+                                            <path d="M5 17h-2v-6l2 -5h9l4 5h1a2 2 0 0 1 2 2v4h-2m-4 0h-6m-6 -6h15m-6 0v-5"></path>
+                                         </svg> </span>
+                                </div>
+                                <div class="card-title mb-1">{{$mobil}}</div>
+                                <div class="text-muted">Total Mobil Marsadatrip</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="card">
+                            <div class="card-body text-center">
+                                <div class="mb-3">
+                                    <span class="avatar avatar-xl rounded bg-light">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                            <path d="M6 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path>
+                                            <path d="M17 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path>
+                                            <path d="M17 17h-11v-14h-2"></path>
+                                            <path d="M6 5l14 1l-1 7h-13"></path>
+                                         </svg>  </span>
+                                </div>
+                                <div class="card-title mb-1">{{$pemesanan}} rentaler</div>
+                                <div class="text-muted">Total Pemesanan</div>
                             </div>
                         </div>
                     </div>

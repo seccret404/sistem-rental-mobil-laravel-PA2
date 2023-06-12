@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('harga_jual');
             $table->string('asal_unit');
             $table->string('sopir');
+            $table->string('profit');
             $table->string('tipe_mobil');
             $table->string('harga_beli');
             $table->string('pengeluaran');

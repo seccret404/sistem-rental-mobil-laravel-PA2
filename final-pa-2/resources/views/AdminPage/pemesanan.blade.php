@@ -5,7 +5,7 @@
         <div class="row g-2 align-items-center">
             <div class="col">
                 <div class="page-pretitle">
-                    Pemesanan
+
                 </div>
                 <h2 class="page-title">
                     Data Pemesanan
@@ -47,7 +47,7 @@
                                             <th>Nama Mobil</th>
                                             <th>Tanggal Mulai</th>
                                             <th>Tanggal Akhir</th>
-                                            <th>Aksi</th>
+                                            <th>Status</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -65,7 +65,11 @@
                                                 @if($item->status == 0)
                                                     <a href="{{ url('/pemesanan/'.$item->id_pesanan) }}"><button type="submit" class="btn btn-primary">Detail</button></a>
                                                 @else
+<<<<<<< HEAD
                                                     <button type="button" disabled class="btn btn-success">Terkonfirmasi</button></a>
+=======
+                                                    <button type="submit" class="btn btn-primary" disabled >Terkonfirmasi</button>
+>>>>>>> b2d62412887c33467067664ce4bb572c2034ebe1
                                                 @endif
                                             </td>
                                         </tr>
@@ -73,7 +77,7 @@
                                             $counter++;
                                         @endphp
                                         @endforeach
-                                        
+
                                     </tbody>
                             </table>
                         </div>

@@ -55,10 +55,10 @@ class BookingController extends Controller
         ];
 
         $idPemesanan = DB::table('pemesanan')->insertGetId($data);
-        $format = "H O R A S M A R S A D A T R I P\nNo.Pesanan: $idPemesanan\Nama : $nama\nNo.Hp : $hp\nAlamat :$alamat\nIngin memesan mobil :$mobil\nTanggal berangkat : $in\nTanggal Kembali :$out\nTerimakasih";
+        $format = "H O R A S M A R S A D A T R I P\nNo.Pesanan: $idPemesanan\nNama : $nama\nNo.Hp : $hp\nAlamat :$alamat\nIngin memesan mobil :$mobil\nTanggal berangkat : $in\nTanggal Kembali :$out\nTerimakasih";
 
 
-        $apiUrl = "https://api.whatsapp.com/send?phone=+6288264210475&text=" . urlencode($format);
+        $apiUrl = "https://api.whatsapp.com/send?phone=+6285373566250&text=" . urlencode($format);
 
         return redirect($apiUrl);
 

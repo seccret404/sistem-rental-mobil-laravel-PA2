@@ -5,7 +5,7 @@
         <div class="row g-2 align-items-center">
             <div class="col">
                 <div class="page-pretitle">
-                    Mobil
+
                 </div>
                 <h2 class="page-title">
                     Data Mobil

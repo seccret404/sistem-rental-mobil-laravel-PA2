@@ -26,7 +26,7 @@ class AuthController extends Controller
                 return redirect('/home');
             }
         }
-        return back()->with('loginerr', 'Login gagal')->onlyInput('email');
+        return back()->with('warning', 'Email atau password salah!')->onlyInput('email');
     }
 
     public function keluar(Request $request){

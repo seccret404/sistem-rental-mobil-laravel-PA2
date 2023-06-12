@@ -2,11 +2,15 @@
 <html lang="en">
 
   <head>
-    <title>CarRental &mdash; Free Website Template by Colorlib</title>
+    <title>MarsadaTrip</title>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/4.5.6/css/ionicons.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
 
     <link rel="stylesheet" href="fonts/icomoon/style.css">
 
@@ -54,7 +58,7 @@
 
               <span class="d-inline-block d-lg-none"><a href="#" class=" site-menu-toggle js-menu-toggle py-5 "><span class="icon-menu h3 text-black"></span></a></span>
 
-              <nav class="site-navigation text-right ml-auto d-none d-lg-block" role="navigation">
+              <nav class="site-navigation text-right ml-auto d-none d-lg-block fixed-top" role="navigation">
                 <ul class="site-menu main-menu js-clone-nav ml-auto ">
                     <li class="active"><a href="/home" class="nav-link">Beranda</a></li>
                     <li><a href="/list" class="nav-link">Mobil</a></li>
@@ -98,152 +102,45 @@
 
 
 
-    <div class="site-section">
+    <div class="site-section bg-white">
       <div class="container">
         <div class="row">
           <div class="col-lg-6 mb-5 mb-lg-0 order-lg-2">
-            <img src="images/hero_2.jpg" alt="Image" class="img-fluid rounded">
+            <img src="images/hero_2.jpg" alt="Image" class="img-fluid rounded" data-aos="fade-down-left">
           </div>
-          <div class="col-lg-4 mr-auto">
-            <h2>Car Company</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit suscipit, repudiandae similique accusantium eius nulla quam laudantium sequi.</p>
-            <p>Debitis voluptates corporis saepe molestias tenetur ab quae, quo earum commodi, laborum dolore, fuga aliquid delectus cum ipsa?</p>
-          </div>
+          <div class="col-lg-4 mr-auto" data-aos="zoom-in-up">
+            <h2>Mengapa Harus MarsadaTrip?</h2>
+            <p>MarsadaTrip menyediakan kendaraan yang selalu prima, siap mengantar ke seluruh tujuan.
+                 Banyak pelanggan yang menggunakan jasa rental ini untuk keperluan dinas, pernikahan, wisuda, dan berwisata.
+                  Semua kendaraan yang tersedia selalu bersih dan wangi.
+                 Hal ini membuat penumpang akan nyaman berkendara dan menempuh perjalanan dengan menggunakan unit dari rental mobil Toba..</p>
+         </div>
         </div>
       </div>
     </div>
 
-    <div class="site-section bg-light">
-      <div class="container">
-        <div class="row justify-content-center text-center mb-5 section-2-title">
-          <div class="col-md-6">
-            <h2 class="mb-4">Meet Our Team</h2>
-          </div>
-        </div>
-        <div class="row align-items-stretch">
-
-          <div class="col-lg-4 col-md-6 mb-5">
-            <div class="post-entry-1 h-100 person-1">
-
-                <img src="images/person_1.jpg" alt="Image"
-                 class="img-fluid">
-
-              <div class="post-entry-1-contents">
-                <span class="meta">Founder</span>
-                <h2>James Doe</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, sapiente.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 mb-5">
-            <div class="post-entry-1 h-100 person-1">
-
-                <img src="images/person_2.jpg" alt="Image"
-                 class="img-fluid">
-
-              <div class="post-entry-1-contents">
-                <span class="meta">Founder</span>
-                <h2>James Doe</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, sapiente.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-5">
-            <div class="post-entry-1 h-100 person-1">
-
-                <img src="images/person_3.jpg" alt="Image"
-                 class="img-fluid">
-
-              <div class="post-entry-1-contents">
-                <span class="meta">Founder</span>
-                <h2>James Doe</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, sapiente.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-5">
-            <div class="post-entry-1 h-100 person-1">
-
-                <img src="images/person_4.jpg" alt="Image"
-                 class="img-fluid">
-
-              <div class="post-entry-1-contents">
-                <span class="meta">Founder</span>
-                <h2>James Doe</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, sapiente.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-5">
-            <div class="post-entry-1 h-100 person-1">
-
-                <img src="images/person_5.jpg" alt="Image"
-                 class="img-fluid">
-
-              <div class="post-entry-1-contents">
-                <span class="meta">Founder</span>
-                <h2>James Doe</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, sapiente.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-5">
-            <div class="post-entry-1 h-100 person-1">
-
-                <img src="images/person_1.jpg" alt="Image"
-                 class="img-fluid">
-
-              <div class="post-entry-1-contents">
-                <span class="meta">Founder</span>
-                <h2>James Doe</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, sapiente.</p>
-              </div>
-            </div>
-          </div>
 
 
-        </div>
-      </div>
-    </div>
-
-    <div class="site-section">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6 mb-5 mb-lg-0">
-            <img src="images/hero_1.jpg" alt="Image" class="img-fluid rounded">
-          </div>
-          <div class="col-lg-4 ml-auto">
-            <h2>Our History</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit suscipit, repudiandae similique accusantium eius nulla quam laudantium sequi.</p>
-            <p>Debitis voluptates corporis saepe molestias tenetur ab quae, quo earum commodi, laborum dolore, fuga aliquid delectus cum ipsa?</p>
-          </div>
-        </div>
-      </div>
-    </div>
 
 
     <div class="site-section bg-primary py-5">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-lg-7 mb-4 mb-md-0">
-            <h2 class="mb-0 text-white">What are you waiting for?</h2>
-            <p class="mb-0 opa-7">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati, laboriosam.</p>
-          </div>
-          <div class="col-lg-5 text-md-right">
-            <a href="#" class="btn btn-primary btn-white">Rent a car now</a>
-          </div>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7 mb-4 mb-md-0">
+                    <h2 class="mb-0 text-white">Tunggu apa lagi?</h2>
+                    <p class="mb-0 opa-7">Lengkapi perjalanan anda dengan melakukan pemesanan sekarang juga!</p>
+                </div>
+                <div class="col-lg-5 text-md-right">
+                    <a href="/list" class="btn btn-primary btn-white">Rental mobil sekarang!</a>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
 
-
-      <footer class="site-footer">
-        <div class="container">
-          <div class="row">
+<hr>
+      <footer class="site-footer bg-white">
+        <div class="container bg-white">
+          {{-- <div class="row">
             <div class="col-lg-3">
               <h2 class="footer-heading mb-4">About Us</h2>
               <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
@@ -298,14 +195,13 @@
                 </div>
               </div>
             </div>
-          </div>
-          <div class="row pt-5 mt-5 text-center">
+          </div> --}}
+          <div class="row text-center">
             <div class="col-md-12">
-              <div class="border-top pt-5">
+              <div class="border-top ">
                 <p>
               <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-              Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart text-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
-              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+              Copyright &copy;marsadatrip <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
               </p>
               </div>
             </div>

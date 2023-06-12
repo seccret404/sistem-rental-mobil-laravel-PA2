@@ -2,12 +2,14 @@
 <html lang="en">
 
 <head>
-    <title>CarRental &mdash; Free Website Template by Colorlib</title>
+    <title>MarsadaTrip</title>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/4.5.6/css/ionicons.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
 
     <link rel="stylesheet" href="fonts/icomoon/style.css">
 
@@ -57,7 +59,7 @@
                                 class=" site-menu-toggle js-menu-toggle py-5 "><span
                                     class="icon-menu h3 text-black"></span></a></span>
 
-                        <nav class="site-navigation text-right ml-auto d-none d-lg-block" role="navigation">
+                        <nav class="site-navigation text-right ml-auto d-none d-lg-block fixed-top" role="navigation">
                             <ul class="site-menu main-menu js-clone-nav ml-auto ">
                                 <li class="active"><a href="/home" class="nav-link">Beranda</a></li>
                                 <li><a href="/list" class="nav-link">Mobil</a></li>
@@ -190,10 +192,10 @@
             </div>
         </div>
 
-
+<hr>
         <footer class="site-footer">
             <div class="container">
-                <div class="row">
+                {{-- <div class="row">
                     <div class="col-lg-3">
                         <h2 class="footer-heading mb-4">About Us</h2>
                         <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
@@ -249,19 +251,12 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="row pt-5 mt-5 text-center">
+                </div> --}}
+                <div class="row x text-center">
                     <div class="col-md-12">
-                        <div class="border-top pt-5">
+                        <div class="">
                             <p>
-                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                                Copyright &copy;<script>
-                                    document.write(new Date().getFullYear());
-
-                                </script> All rights reserved | This template is made with <i
-                                    class="icon-heart text-danger" aria-hidden="true"></i> by <a
-                                    href="https://colorlib.com" target="_blank">Colorlib</a>
-                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                opyright &copy;marsadatrip
                             </p>
                         </div>
                     </div>

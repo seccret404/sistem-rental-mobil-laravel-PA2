@@ -5,7 +5,7 @@
         <div class="row g-2 align-items-center">
             <div class="col">
                 <div class="page-pretitle">
-                    Testimoni
+                   
                 </div>
                 <h2 class="page-title">
                     Data Testimoni
@@ -50,37 +50,37 @@
                                     </svg>Tambah Data </a>
                             </div>
                         </div>
-                        <div class="row mt-2">
-                            <div class="col-12">
-                                <form action="/karyawan" method="get">
-                                    <div class="row">
-                                        <div class="col-3">
-                                            <div class="form-group">
-                                                <input type="text" name="nama_karyawan" class="form-control"
-                                                    placeholder="Nama Pelanggan" value="{{Request('nama_karyawan')}}">
+                            {{-- <div class="row mt-2">
+                                <div class="col-12">
+                                    <form action="/karyawan" method="get">
+                                        <div class="row">
+                                            <div class="col-3">
+                                                <div class="form-group">
+                                                    <input type="text" name="nama_karyawan" class="form-control"
+                                                        placeholder="Nama Pelanggan" value="{{Request('nama_karyawan')}}">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-2">
+                                                <div class="form-group">
+                                                    <button class="btn btn-primary" type="submit">
+                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                            class="icon icon-tabler icon-tabler-search" width="24"
+                                                            height="24" viewBox="0 0 24 24" stroke-width="2"
+                                                            stroke="currentColor" fill="none" stroke-linecap="round"
+                                                            stroke-linejoin="round">
+                                                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                                            <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0"></path>
+                                                            <path d="M21 21l-6 -6"></path>
+                                                        </svg> Cari
+                                                    </button>
+                                                </div>
                                             </div>
                                         </div>
 
-                                        <div class="col-2">
-                                            <div class="form-group">
-                                                <button class="btn btn-primary" type="submit">
-                                                    <svg xmlns="http://www.w3.org/2000/svg"
-                                                        class="icon icon-tabler icon-tabler-search" width="24"
-                                                        height="24" viewBox="0 0 24 24" stroke-width="2"
-                                                        stroke="currentColor" fill="none" stroke-linecap="round"
-                                                        stroke-linejoin="round">
-                                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                                        <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0"></path>
-                                                        <path d="M21 21l-6 -6"></path>
-                                                    </svg> Cari
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </form>
-                            </div>
-                        </div>
+                                    </form>
+                                </div>
+                            </div> --}}
 
 
                         <div class="row mt-4">
@@ -127,7 +127,7 @@
                                         </tr>
 
                                         @endforeach
-                                        
+
                                     </tbody>
                             </table>
                         </div>

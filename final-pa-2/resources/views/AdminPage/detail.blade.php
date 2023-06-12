@@ -5,7 +5,7 @@
         <div class="row g-2 align-items-center">
             <div class="col">
                 <div class="page-pretitle">
-                    Detail Pemesanan
+
                 </div>
                 <h2 class="page-title">
                     Data Detail Pemesanan
@@ -42,10 +42,21 @@
                                                 <td>{{ $idPemesanan->booking_out }}</td>
                                             </tr>
                                         </table>
+<<<<<<< HEAD
                                         <form action="{{ url('/pemesanan-status/'.$idPemesanan->id_pesanan) }}" method="POST">
                                             @csrf
                                             <button type="submit">Confirm</button>
                                         </form>
+=======
+                                        @if($idPemesanan->status == 0)
+                                            <form action="{{ url('/pemesanan-status/'.$idPemesanan->id_pesanan) }}" method="POST">
+                                                @csrf
+                                                <button type="submit" class="btn btn-primary">Konfirmasi</button>
+                                            </form>
+                                        @else
+                                            <button type="button" disabled  class="btn btn-success">Terkonfirmasi</button>
+                                        @endif
+>>>>>>> b2d62412887c33467067664ce4bb572c2034ebe1
                                     </div>
                                 </div>
                             </div>

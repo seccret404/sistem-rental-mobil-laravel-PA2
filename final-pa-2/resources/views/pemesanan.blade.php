@@ -99,14 +99,14 @@
                       </div>
                     <div class="form-footer">
                       <button type="submit" class="btn btn-primary w-100">Rental</button>
-                    </div>
+                    </div><div class="text-center text-muted mt-3">
+                <a href="/home" tabindex="-1">Kembali</a>
+              </div>
                   </form>
                 </div>
 
               </div>
-              <div class="text-center text-muted mt-3">
-                <a href="/home" tabindex="-1">Kembali</a>
-              </div>
+
             </div>
           </div>
 

@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>CarRental &mdash; Free Website Template by Colorlib</title>
+    <title>MarsadaTrip</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -28,6 +28,11 @@
     <link rel="stylesheet" href="carousel/css/owl.theme.default.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/4.5.6/css/ionicons.min.css">
     <link rel="stylesheet" href="carousel/css/style.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
 
 </head>
 
@@ -55,13 +60,13 @@
                         </div>
                     </div>
 
-                    <div class="col-9  text-right">
+                    <div class="col-9  text-right fixed-top">
 
                         <span class="d-inline-block d-lg-none"><a href="#"
                                 class=" site-menu-toggle js-menu-toggle py-5 "><span
                                     class="icon-menu h3 text-black"></span></a></span>
 
-                        <nav class="site-navigation text-right ml-auto d-none d-lg-block" role="navigation">
+                        <nav class="site-navigation text-right ml-auto d-none d-lg-block fixed-top"  role="navigation">
                             <ul class="site-menu main-menu js-clone-nav ml-auto ">
                                 <li class="active"><a href="/home" class="nav-link">Beranda</a></li>
                                 <li><a href="/list" class="nav-link">Mobil</a></li>
@@ -97,32 +102,7 @@
                             </div>
                         </div>
 
-                        <form class="trip-form">
-                            <div class="r0w">
-                                <div class="col-12">
-                                    @if (Session::get('success'))
-                                    <div class="alert alert-success">
 
-                                        {{Session::get('success')}}
-                                    </div>
-                                    @endif
-                                    @if (Session::get('error'))
-                                    <div class="alert alert-danger">
-
-                                        {{ Session::get('error')}}
-
-                                    </div>
-                                    @endif
-                                </div>
-                                <div class="row">
-                                    <div class="col-12 text-center">
-                                       rtyuilo;
-                                    </div>
-                                </div>
-                            </div>
-
-
-                        </form>
 
                     </div>
                 </div>
@@ -132,7 +112,7 @@
 
 
 
-        <div class="site-section">
+        <div class="site-section bg-white" data-aos="fade-up">
             <div class="container">
                 <h2 class="section-heading"><strong>Cara Menggunakan?</strong></h2>
                 <p class="mb-5">Ikuti Langkah Mudah Berikut:</p>
@@ -208,8 +188,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-7">
-                        <h2 class="section-heading"><strong>Car Listings</strong></h2>
-                        <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                        <h2 class="section-heading"><strong>Daftar Mobil</strong></h2>
+                        <p class="mb-5">Pilihlah mobil sesuai kebutuhan anda!</p>
                     </div>
                 </div>
 
@@ -263,7 +243,7 @@
                 </div>
                 <div class="row">
                     <div class="col-4">
-                        <p><a href="/list" class="btn btn-primary">Lihat Lebih Banyak</a></p>
+                        <p><a href="/list" class="btn btn-primary" data-aos="zoom-out">Lihat Lebih Banyak</a></p>
 
                     </div>
                 </div>
@@ -283,7 +263,7 @@
                 <div class="row">
                     <div class="col-lg-4 mb-5">
                         <div class="service-1 dark">
-                            <span class="service-1-icon bg-white">
+                            <span class="service-1-icon bg-white" data-aos="zoom-in">
                                 <span class="icon-car"></span>
                             </span>
                             <div class="service-1-contents">
@@ -295,7 +275,7 @@
                     </div>
                     <div class="col-lg-4 mb-5">
                         <div class="service-1 dark">
-                            <span class="service-1-icon bg-info">
+                            <span class="service-1-icon bg-info" data-aos="zoom-in">
                                 <span class="icon-person"></span>
                             </span>
                             <div class="service-1-contents">
@@ -307,7 +287,7 @@
                     </div>
                     <div class="col-lg-4 mb-5">
                         <div class="service-1 dark">
-                            <span class="service-1-icon bg-warning">
+                            <span class="service-1-icon bg-warning" data-aos="zoom-in">
                                 <span class="icon-money"></span>
                             </span>
                             <div class="service-1-contents">
@@ -323,7 +303,7 @@
 
 
 
-        <section class="ftco-section">
+        <section class="ftco-section" style="margin-top:-90px!important">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 text-center">
@@ -364,10 +344,10 @@
             </div>
         </section>
 
-
+<hr>
         <footer class="site-footer">
             <div class="container">
-                <div class="row">
+                {{-- <div class="row">
                     <div class="col-lg-3">
                         <h2 class="footer-heading mb-4">About Us</h2>
                         <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
@@ -423,19 +403,12 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="row pt-5 mt-5 text-center">
+                </div> --}}
+                <div class="row text-center">
                     <div class="col-md-12">
-                        <div class="border-top pt-5">
+                        <div class=" ">
                             <p>
-                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                                Copyright &copy;<script>
-                                    document.write(new Date().getFullYear());
-
-                                </script> All rights reserved | This template is made with <i
-                                    class="icon-heart text-danger" aria-hidden="true"></i> by <a
-                                    href="https://colorlib.com" target="_blank">Colorlib</a>
-                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                opyright &copy;marsadatrip
                             </p>
                         </div>
                     </div>
@@ -445,6 +418,10 @@
         </footer>
 
     </div>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/popper.min.js"></script>
