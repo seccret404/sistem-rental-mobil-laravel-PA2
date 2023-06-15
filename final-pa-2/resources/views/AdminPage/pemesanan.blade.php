@@ -65,7 +65,11 @@
                                                 @if($item->status == 0)
                                                     <a href="{{ url('/pemesanan/'.$item->id_pesanan) }}"><button type="submit" class="btn btn-primary">Detail</button></a>
                                                 @else
+<<<<<<< HEAD
+                                                    <button type="button" disabled class="btn btn-success">Terkonfirmasi</button></a>
+=======
                                                     <button type="submit" class="btn btn-primary" disabled >Terkonfirmasi</button>
+>>>>>>> b2d62412887c33467067664ce4bb572c2034ebe1
                                                 @endif
                                             </td>
                                         </tr>
