@@ -6,7 +6,7 @@
         <div class="row g-2 align-items-center">
             <div class="col">
                 <div class="page-pretitle">
-                   
+
                 </div>
                 <h2 class="page-title">
                     Data Administrasi
@@ -94,10 +94,13 @@
                                             <th>Nama Mobil</th>
                                             <th>Asal Sopir</th>
                                             <th>Dana DP</th>
-                                            <th>Harga Rental Awal</th>
+                                            <th>Harga Beli</th>
+                                            <th>Harga Jual</th>
                                             <th>Asal Unit</th>
-                                            <th>Type Mobil</th>
-                                            <th>Harga Rental Akhir</th>
+                                            <th>Type</th>
+                                            <th>Total Harga Beli</th>
+                                            <th>Total Harga Jual</th>
+                                            <th>Diskon</th>
                                             <th>Pengeluaran</th>
                                             <th>Deskripsi</th>
                                             <th>Profit</th>
@@ -113,9 +116,12 @@
                                             <td>{{$item->sopir}}</td>
                                             <td>Rp.{{number_format($item->dana_dp)}}</td>
                                             <td>Rp.{{number_format($item->harga_jual)}}</td>
-                                            <td>{{$item->asal_unit}}</td>
-                                            <td>{{$item->tipe_mobil}}</td>
                                             <td>Rp.{{number_format($item->harga_beli)}}</td>
+                                             <td>{{$item->asal_unit}}</td>
+                                            <td>{{$item->type}}</td>
+                                            <td>{{number_format($item->tharga_beli)}}</td>
+                                            <td>{{number_format($item->tharga_jual)}}</td>
+                                            <td>{{$item->diskon}}</td>
                                             <td>Rp.{{number_format($item->pengeluaran)}}</td>
                                             <td>{{$item->deskripsi}}</td>
                                             <td>Rp.{{number_format($item->profit)}}</td>
@@ -145,7 +151,7 @@
 
                                         </tr>
                                         @endforeach
-                                        <tr>
+                                        {{-- <tr>
                                             <td>Total</td>
                                             <td></td>
                                             <td></td>
@@ -159,7 +165,7 @@
                                             <td></td>
                                             <td>Rp.{{number_format($profit)}}</td>
                                             <td></td>
-                                        </tr>
+                                        </tr> --}}
                                     </tbody>
                             </table>
                         </div>
@@ -202,6 +208,7 @@
                     @csrf
                     <div class="row">
                         <div class="col-12">
+                            <div class="form-label">Nama Rentaler</div>
                             <div class="input-icon mb-3">
                                 <span class="input-icon-addon">
                                     <!-- Download SVG icon from http://tabler-icons.io/i/user -->
@@ -212,7 +219,7 @@
                                         <path d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855"></path>
                                      </svg>
                                 </span>
-                                <input type="text" value="" id="nik" name="nama_rentaler" class="form-control"
+                                <input type="text" value="" id="nik" name="nama_rentaler" required class="form-control"
                                     placeholder="nama rentaler..">
                             </div>
                         </div>
@@ -223,7 +230,7 @@
                             <div class="form-gorup">
                                 <div class="form-label">Nama Mobil</div>
 
-                                <select name="nama" id="kode_dept" class="form-select tomselected ">
+                                <select name="nama" id="kode_dept" class="form-select tomselected " required>
                                     <option value="">--masukkan data--</option>
                                     @foreach ($nama as $item)
                                     <option {{Request('nama_mobil')== $item->nama_mobil ? 'selected' : ''}}
@@ -235,6 +242,7 @@
                     </div>
                     <div class="row mt-2">
                         <div class="col-12">
+                            <div class="form-label">Dana DP</div>
                             <div class="input-icon mb-3">
                                 <span class="input-icon-addon">
                                     <!-- Download SVG icon from http://tabler-icons.io/i/user -->
@@ -246,29 +254,89 @@
                                         <path d="M19 21v1m0 -8v1"></path>
                                      </svg>
                                 </span>
-                                <input type="text" value="" id="nama_lengkap" name="dana_dp" class="form-control"
+                                <input type="text" required value="" id="nama_lengkap" name="dana_dp" class="form-control"
                                     placeholder="Dana DP">
                             </div>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row mt-2">
                         <div class="col-12">
+                            <div class="form-label">Harga Beli</div>
                             <div class="input-icon mb-3">
                                 <span class="input-icon-addon">
                                     <!-- Download SVG icon from http://tabler-icons.io/i/user -->
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-tag" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-device-ipad-dollar" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                         <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                        <circle cx="8.5" cy="8.5" r="1" fill="currentColor"></circle>
-                                        <path d="M4 7v3.859c0 .537 .213 1.052 .593 1.432l8.116 8.116a2.025 2.025 0 0 0 2.864 0l4.834 -4.834a2.025 2.025 0 0 0 0 -2.864l-8.117 -8.116a2.025 2.025 0 0 0 -1.431 -.593h-3.859a3 3 0 0 0 -3 3z"></path>
+                                        <path d="M13 21h-7a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v5"></path>
+                                        <path d="M9 18h4"></path>
+                                        <path d="M21 15h-2.5a1.5 1.5 0 0 0 0 3h1a1.5 1.5 0 0 1 0 3h-2.5"></path>
+                                        <path d="M19 21v1m0 -8v1"></path>
                                      </svg>
                                 </span>
-                                <input type="text" value="" id="no_hp" name="harga_jual" class="form-control"
-                                    placeholder="Harga jual..">
+                                <input type="text" value=" " required id="nama_lengkap" name="harga_beli" class="form-control"
+                                    placeholder="Harga Beli">
                             </div>
                         </div>
                     </div>
+                    <div class="row mt-2">
+                        <div class="col-12">
+                            <div class="form-label">Harga Jual</div>
+                            <div class="input-icon mb-3">
+                                <span class="input-icon-addon">
+                                    <!-- Download SVG icon from http://tabler-icons.io/i/user -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-receipt-2" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                        <path d="M5 21v-16a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v16l-3 -2l-2 2l-2 -2l-2 2l-2 -2l-3 2"></path>
+                                        <path d="M14 8h-2.5a1.5 1.5 0 0 0 0 3h1a1.5 1.5 0 0 1 0 3h-2.5m2 0v1.5m0 -9v1.5"></path>
+                                     </svg>
+                                </span>
+                                <input type="text" value="" required id="nama_lengkap" name="harga_jual" class="form-control"
+                                    placeholder="Harga Jual">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-12">
+                            <div class="form-label">Jumlah Unit</div>
+                            <div class="input-icon mb-3">
+                                <span class="input-icon-addon">
+                                    <!-- Download SVG icon from http://tabler-icons.io/i/user -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-device-ipad-dollar" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                        <path d="M13 21h-7a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v5"></path>
+                                        <path d="M9 18h4"></path>
+                                        <path d="M21 15h-2.5a1.5 1.5 0 0 0 0 3h1a1.5 1.5 0 0 1 0 3h-2.5"></path>
+                                        <path d="M19 21v1m0 -8v1"></path>
+                                     </svg>
+                                </span>
+                                <input type="number" value="" required id="nama_lengkap" min="1" name="jmlh_unit" class="form-control"
+                                    placeholder="Jumlah Unit">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-12">
+                            <div class="form-label">Jumlah Hari</div>
+                            <div class="input-icon mb-3">
+                                <span class="input-icon-addon">
+                                    <!-- Download SVG icon from http://tabler-icons.io/i/user -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-device-ipad-dollar" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                        <path d="M13 21h-7a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v5"></path>
+                                        <path d="M9 18h4"></path>
+                                        <path d="M21 15h-2.5a1.5 1.5 0 0 0 0 3h1a1.5 1.5 0 0 1 0 3h-2.5"></path>
+                                        <path d="M19 21v1m0 -8v1"></path>
+                                     </svg>
+                                </span>
+                                <input type="number" value="" required id="nama_lengkap" min="1" name="jmlh_hari" class="form-control"
+                                    placeholder="Jumlah Hari">
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="row">
                         <div class="col-12">
+                            <div class="form-label">Asal Unit</div>
                             <div class="input-icon mb-3">
                                 <span class="input-icon-addon">
                                     <!-- Download SVG icon from http://tabler-icons.io/i/user -->
@@ -282,7 +350,7 @@
                                         <path d="M2 12l2 0"></path>
                                      </svg>
                                 </span>
-                                <input type="text" value="" id="nama_lengkap" name="asal_unit" class="form-control"
+                                <input type="text" value="" required id="nama_lengkap" name="asal_unit" class="form-control"
                                     placeholder="Asal unit">
                             </div>
                         </div>
@@ -291,26 +359,22 @@
                         <div class="col-12">
                             <div class="input-icon mb-3">
                                 <div class="mb-3">
-                                    <div class="form-label">Tipe Mobil</div>
+                                    <div class="form-label">Tipe</div>
                                     <div>
                                       <label class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" value="sedan" name="tipe_mobil" checked="">
-                                        <span class="form-check-label">Sedan</span>
+                                        <input class="form-check-input" type="radio" value="LK" name="tipe" checked="">
+                                        <span class="form-check-label">LK</span>
                                       </label>
                                       <label class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" value="truk" name="tipe_mobil">
-                                        <span class="form-check-label">Truk</span>
-                                      </label>
-                                      <label class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" value="pickup" name="tipe_mobil">
-                                        <span class="form-check-label">Pickup</span>
+                                        <input class="form-check-input" type="radio" value="All In" name="tipe">
+                                        <span class="form-check-label">ALL IN</span>
                                       </label>
                                     </div>
                                   </div>
                             </div>
                         </div>
                     </div>
-                    <div class="row mt-5">
+                    <div class="row mt25">
                         <div class="col-12">
                             <div class="input-icon mb-3">
                                 <div class="mb-3">
@@ -332,6 +396,7 @@
                     </div>
                     <div class="row">
                         <div class="col-12">
+                            <div class="form-label">Total Harga Beli</div>
                             <div class="input-icon mb-3">
                                 <span class="input-icon-addon">
                                     <!-- Download SVG icon from http://tabler-icons.io/i/user -->
@@ -341,13 +406,14 @@
                                         <path d="M4 7v3.859c0 .537 .213 1.052 .593 1.432l8.116 8.116a2.025 2.025 0 0 0 2.864 0l4.834 -4.834a2.025 2.025 0 0 0 0 -2.864l-8.117 -8.116a2.025 2.025 0 0 0 -1.431 -.593h-3.859a3 3 0 0 0 -3 3z"></path>
                                      </svg>
                                 </span>
-                                <input type="text" value="" id="no_hp" name="harga_beli" class="form-control"
-                                    placeholder="Harga beli..">
+                                <input type="text" value="" id="no_hp" required name="tharga_beli" class="form-control"
+                                    placeholder="Total Harga beli">
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-12">
+                            <div class="form-label">Total Harga Jual</div>
                             <div class="input-icon mb-3">
                                 <span class="input-icon-addon">
                                     <!-- Download SVG icon from http://tabler-icons.io/i/user -->
@@ -355,6 +421,46 @@
                                         <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                                         <circle cx="8.5" cy="8.5" r="1" fill="currentColor"></circle>
                                         <path d="M4 7v3.859c0 .537 .213 1.052 .593 1.432l8.116 8.116a2.025 2.025 0 0 0 2.864 0l4.834 -4.834a2.025 2.025 0 0 0 0 -2.864l-8.117 -8.116a2.025 2.025 0 0 0 -1.431 -.593h-3.859a3 3 0 0 0 -3 3z"></path>
+                                     </svg>
+                                </span>
+                                <input type="text" value="" id="no_hp" required name="tharga_jual" class="form-control"
+                                    placeholder="Total Harga Jual..">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-label">Diskon</div>
+                            <div class="input-icon mb-3">
+                                <span class="input-icon-addon">
+                                    <!-- Download SVG icon from http://tabler-icons.io/i/user -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-discount" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                        <path d="M9 15l6 -6"></path>
+                                        <circle cx="9.5" cy="9.5" r=".5" fill="currentColor"></circle>
+                                        <circle cx="14.5" cy="14.5" r=".5" fill="currentColor"></circle>
+                                        <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path>
+                                     </svg>
+                                </span>
+                                <input type="text" value="" required id="no_hp" name="diskon" class="form-control"
+                                    placeholder="Diskon">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-label">Pengeluaran</div>
+                            <div class="input-icon mb-3">
+                                <span class="input-icon-addon">
+                                    <!-- Download SVG icon from http://tabler-icons.io/i/user -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-database-export" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                        <path d="M4 6c0 1.657 3.582 3 8 3s8 -1.343 8 -3s-3.582 -3 -8 -3s-8 1.343 -8 3"></path>
+                                        <path d="M4 6v6c0 1.657 3.582 3 8 3c1.118 0 2.183 -.086 3.15 -.241"></path>
+                                        <path d="M20 12v-6"></path>
+                                        <path d="M4 12v6c0 1.657 3.582 3 8 3c.157 0 .312 -.002 .466 -.005"></path>
+                                        <path d="M16 19h6"></path>
+                                        <path d="M19 16l3 3l-3 3"></path>
                                      </svg>
                                 </span>
                                 <input type="text" value="" id="no_hp" name="pengeluaran" class="form-control"
@@ -394,12 +500,13 @@
 @endsection
 @push('myscript')
 <script>
-
     $(document).ready(function () {
         $('#data').DataTable({
             scrollX: true,
         });
     });
+</script>
+<script>
 
     $(function () {
         $("#tambah_karyawan").click(function () {
