@@ -470,6 +470,27 @@
                     </div>
                     <div class="row">
                         <div class="col-12">
+                            <div class="input-icon mb-3">
+                                <div class="mb-3">
+                                    <div class="form-label">Tanggal Mulai</div>
+                                    <div>
+                                      <label class="form-check form-check-inline">
+                                        <input class="form-control" type="date" name="sopir">
+                                      </label>
+                                    </div>
+                                  </div>
+                                  <div class="form-label">Tanggal Akhir</div>
+                                    <div>
+                                      <label class="form-check form-check-inline">
+                                        <input class="form-control" type="date" name="sopir">
+                                      </label>
+                                    </div>
+                                  </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
                             <div class="mb-3">
                                 <label class="form-label">Deskripsi</label>
                                 <textarea class="form-control" name="deskripsi" rows="5"></textarea>
