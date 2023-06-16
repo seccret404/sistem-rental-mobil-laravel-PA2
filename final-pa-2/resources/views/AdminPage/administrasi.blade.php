@@ -394,7 +394,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row">
+                    {{-- <div class="row">
                         <div class="col-12">
                             <div class="form-label">Total Harga Beli</div>
                             <div class="input-icon mb-3">
@@ -427,7 +427,7 @@
                                     placeholder="Total Harga Jual..">
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                     <div class="row">
                         <div class="col-12">
                             <div class="form-label">Diskon</div>

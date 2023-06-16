@@ -51,7 +51,7 @@
                                     Tersedia banyak armada yang bisa dipilih sesuai kebutuhan dengan berbagai rute serta medan jalanan.
                                 </li>
                                 <li>
-                                    Apalagi, untuk memilih rental kendaraan terbaik, perlu mempertimbangkan berbagai hal krusial.
+                                    Apalagi, untuk memilih rental kendaraan terbaik, perlu me   mpertimbangkan berbagai hal krusial.
                                     Jangan sampai sudah mengeluarkan uang namun tidak mendapatkan fasilitas dan kenyamanan seperti yang diharapkan.
                                      Jadi, simak ulasan di bawah ini agar perjalanan nyaman dan menyenangkan.
 

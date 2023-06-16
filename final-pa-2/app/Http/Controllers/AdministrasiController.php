@@ -34,9 +34,17 @@ class AdministrasiController extends Controller
         $hb = $request->harga_beli;
         $p = $request->pengeluaran;
         $des = $request->deskripsi;
-        $profit = 0;
+
         $diskon = $request->diskon;
-        $tdiskon = $diskon/100;
+
+
+
+        $totalbeli = $jumlah_hari * $jumlah_unit * $hb;
+        $totaljual = $jumlah_hari * $jumlah_unit * $hj;
+        $tdiskon = ($diskon/100)*$totaljual;
+        $fdiskon = $totaljual - $tdiskon;
+
+        $profit = $fdiskon - $p;
 
         $data = [
             'nama_rentaler'=>$costumer,
@@ -51,8 +59,8 @@ class AdministrasiController extends Controller
             'sopir'=>$sopir,
             'type'=>$tipe,
             'diskon'=>$diskon,
-            'tharga_beli'=>$thb,
-            'tharga_jual'=>$thj,
+            'tharga_beli'=>$totalbeli,
+            'tharga_jual'=>$fdiskon,
             'pengeluaran'=>$p,
             'deskripsi'=>$des
 
