@@ -271,7 +271,7 @@
                     <div class="col-md-12">
                         <div class="">
                             <p>
-                                opyright &copy;marsadatrip
+                                Copyright &copy;marsadatrip
                             </p>
                         </div>
                     </div>
