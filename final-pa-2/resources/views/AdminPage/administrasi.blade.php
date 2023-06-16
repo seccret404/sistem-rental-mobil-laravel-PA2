@@ -254,7 +254,7 @@
                                         <path d="M19 21v1m0 -8v1"></path>
                                      </svg>
                                 </span>
-                                <input type="text" required value="" id="nama_lengkap" name="dana_dp" class="form-control"
+                                <input type="text"  value="" id="nama_lengkap" name="dana_dp" class="form-control"
                                     placeholder="Dana DP">
                             </div>
                         </div>
@@ -442,7 +442,7 @@
                                         <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path>
                                      </svg>
                                 </span>
-                                <input type="text" value="" required id="no_hp" name="diskon" class="form-control"
+                                <input type="text" value=""  id="no_hp" name="diskon" class="form-control"
                                     placeholder="Diskon">
                             </div>
                         </div>
