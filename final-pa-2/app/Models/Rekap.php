@@ -12,13 +12,22 @@ class Rekap extends Model
     protected $table = 'administrasi';
     protected $fillable = [
         'nama_rentaler',
+        'nama',
         'dana_dp',
+        'jmlh_hari',
+        'jmlh_unit',
         'harga_jual',
+        'diskon',
         'asal_unit',
         'harga_beli',
         'pengeluaran',
         'sopir',
-        'deskripsi'
+        'profit',
+        'deskripsi',
+        'type',
+        'tharga_jual',
+        'tharga_beli',
+        'pengeluaran',
     ];
     protected $primaryKey = 'id';
 }

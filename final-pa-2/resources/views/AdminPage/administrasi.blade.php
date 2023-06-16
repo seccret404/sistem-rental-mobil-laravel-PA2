@@ -39,7 +39,7 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col">
+                            <div class="col-lg-6">
                                 <a href="#" class="btn btn-primary" id="tambah_karyawan"><svg
                                         xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-plus"
                                         width="24" height="24" viewBox="0 0 24 24" stroke-width="2"
@@ -49,6 +49,17 @@
                                         <path d="M12 5l0 14"></path>
                                         <path d="M5 12l14 0"></path>
                                     </svg>Tambah Data Administrasi </a>
+                            </div>
+                            <div class="col-lg-6">
+                                <a href="{{ url('/pdf') }}" class="btn btn-success" id="tambah_karyawan"><svg
+                                        xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-plus"
+                                        width="24" height="24" viewBox="0 0 24 24" stroke-width="2"
+                                        stroke="currentColor" fill="none" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                        <path d="M12 5l0 14"></path>
+                                        <path d="M5 12l14 0"></path>
+                                    </svg>PDF</a>
                             </div>
                         </div>
                         {{-- <div class="row mt-2">
@@ -382,52 +393,18 @@
                                     <div>
                                       <label class="form-check form-check-inline">
                                         <input class="form-check-input" type="radio" value="MarsadaTrip" name="sopir" checked="">
-                                        <span class="form-check-label">MarsadaTrip</span>
+                                        <span class="form-check-label">Marsada Trip</span>
                                       </label>
                                       <label class="form-check form-check-inline">
                                         <input class="form-check-input" type="radio" value="Rentaler" name="sopir">
                                         <span class="form-check-label">Rentaler</span>
                                       </label>
-
                                     </div>
-                                  </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    {{-- <div class="row">
-                        <div class="col-12">
-                            <div class="form-label">Total Harga Beli</div>
-                            <div class="input-icon mb-3">
-                                <span class="input-icon-addon">
-                                    <!-- Download SVG icon from http://tabler-icons.io/i/user -->
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-tag" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                        <circle cx="8.5" cy="8.5" r="1" fill="currentColor"></circle>
-                                        <path d="M4 7v3.859c0 .537 .213 1.052 .593 1.432l8.116 8.116a2.025 2.025 0 0 0 2.864 0l4.834 -4.834a2.025 2.025 0 0 0 0 -2.864l-8.117 -8.116a2.025 2.025 0 0 0 -1.431 -.593h-3.859a3 3 0 0 0 -3 3z"></path>
-                                     </svg>
-                                </span>
-                                <input type="text" value="" id="no_hp" required name="tharga_beli" class="form-control"
-                                    placeholder="Total Harga beli">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="form-label">Total Harga Jual</div>
-                            <div class="input-icon mb-3">
-                                <span class="input-icon-addon">
-                                    <!-- Download SVG icon from http://tabler-icons.io/i/user -->
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-tag" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                        <circle cx="8.5" cy="8.5" r="1" fill="currentColor"></circle>
-                                        <path d="M4 7v3.859c0 .537 .213 1.052 .593 1.432l8.116 8.116a2.025 2.025 0 0 0 2.864 0l4.834 -4.834a2.025 2.025 0 0 0 0 -2.864l-8.117 -8.116a2.025 2.025 0 0 0 -1.431 -.593h-3.859a3 3 0 0 0 -3 3z"></path>
-                                     </svg>
-                                </span>
-                                <input type="text" value="" id="no_hp" required name="tharga_jual" class="form-control"
-                                    placeholder="Total Harga Jual..">
-                            </div>
-                        </div>
-                    </div> --}}
+                 
                     <div class="row">
                         <div class="col-12">
                             <div class="form-label">Diskon</div>
@@ -468,27 +445,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="input-icon mb-3">
-                                <div class="mb-3">
-                                    <div class="form-label">Tanggal Mulai</div>
-                                    <div>
-                                      <label class="form-check form-check-inline">
-                                        <input class="form-control" type="date" name="sopir">
-                                      </label>
-                                    </div>
-                                  </div>
-                                  <div class="form-label">Tanggal Akhir</div>
-                                    <div>
-                                      <label class="form-check form-check-inline">
-                                        <input class="form-control" type="date" name="sopir">
-                                      </label>
-                                    </div>
-                                  </div>
-                            </div>
-                        </div>
-                    </div>
+                    
                     <div class="row">
                         <div class="col-12">
                             <div class="mb-3">

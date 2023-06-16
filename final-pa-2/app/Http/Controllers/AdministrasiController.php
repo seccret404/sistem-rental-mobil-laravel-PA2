@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Rekap;
+use PDF;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -30,14 +31,11 @@ class AdministrasiController extends Controller
         $jumlah_unit = $request->jmlh_unit;
         $jumlah_hari = $request->jmlh_hari;
         $tipe = $request->tipe;
-        $sopir = $request->sopir;
+        $spr = $request->sopir;
         $hb = $request->harga_beli;
         $p = $request->pengeluaran;
         $des = $request->deskripsi;
-
         $diskon = $request->diskon;
-
-
 
         $totalbeli = $jumlah_hari * $jumlah_unit * $hb;
         $totaljual = $jumlah_hari * $jumlah_unit * $hj;
@@ -56,17 +54,16 @@ class AdministrasiController extends Controller
             'jmlh_unit'=>$jumlah_unit,
             'jmlh_hari'=>$jumlah_hari,
             'profit'=>$profit,
-            'sopir'=>$sopir,
+            'sopir'=>$spr,
             'type'=>$tipe,
             'diskon'=>$diskon,
             'tharga_beli'=>$totalbeli,
             'tharga_jual'=>$fdiskon,
             'pengeluaran'=>$p,
             'deskripsi'=>$des
-
         ];
-
-        $simpan = DB::table('administrasi')->insert($data);
+      
+        $simpan = Rekap::create($data);
         if($simpan){
             return redirect('/administrasi')->with(['success'=>"Administrasi Berhasil Ditambahkan"]);
 
@@ -100,4 +97,11 @@ class AdministrasiController extends Controller
 
         }
         }
+
+    public function pdf() {
+        // return view('AdminPage.invoice');
+        $administrasi = Rekap::all();
+        $pdf = PDF::loadView('AdminPage.invoice', ['administrasi' => $administrasi]);
+        return $pdf->download('invoice.pdf');
+    }
 }
