@@ -12,7 +12,7 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-    <title>Register-Marsadatrip</title>
+    <title>Pemesanan Marsadatrip</title>
     <!-- CSS files -->
     <link href="{{asset('tabler/dist/css/tabler.min.css?1674944402')}}" rel="stylesheet"/>
     <link href="{{asset('tabler/dist/css/tabler-flags.min.css?1674944402')}}" rel="stylesheet"/>
@@ -82,7 +82,7 @@
                  </div>
 
                  @endif
-                  <form action="/booking/proses" method="post" id="myform"  autocomplete="off">
+                  <form action="/booking/proses" method="post" autocomplete="off">
                     @csrf
                     <div class="mb-3">
                         <label class="form-label">Nama</label>
@@ -127,22 +127,18 @@
                       <div class="mb-3">
                         <label class="form-label">Pesan</label>
                         <textarea class="form-control" name="pesan" rows="5">
-
                         </textarea>
                       </div>
                     <div class="form-footer">
                       <button type="submit" class="btn btn-primary w-100">Rental</button>
                     </div><div class="text-center text-muted mt-3">
-                <a href="/home" tabindex="-1">Kembali</a>
+                <a href="/" tabindex="-1">Kembali</a>
               </div>
                   </form>
                 </div>
-
               </div>
-
             </div>
           </div>
-
         </div>
       </div>
     </div>

@@ -22,11 +22,15 @@ use App\Http\Controllers\AdministrasiController;
 |
 */
 //guest
-    Route::get('/',[AuthController::class,'index'])->name('login')->middleware('guest');
+    Route::get('/login',[AuthController::class,'index'])->name('login')->middleware('guest');
     Route::post('/loginlah',[AuthController::class,'loginlah']);
     Route::post('/logout', [AuthController:: class, 'logout']);
     Route::get('/register',[RegisterController::class,'register']);
     Route::post('/registered',[RegisterController::class,'registered']);
+    Route::get('/',[PageController::class,'home']);
+    Route::get('/list',[PageController::class,'list']);
+    Route::get('/about',[PageController::class,'about']);
+
 //guest-end
 
 //auth
@@ -66,9 +70,8 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
 });
 
 Route::middleware(['auth', 'role:user'])->group(function () {
-        Route::get('/home',[PageController::class,'home']);
-        Route::get('/about',[PageController::class,'about']);
-        Route::get('/list',[PageController::class,'list']);
+
+
         Route::get('/contact',[PageController::class,'contact']);
 
         //add-feedback

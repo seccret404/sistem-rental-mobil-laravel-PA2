@@ -58,7 +58,7 @@
 
               <nav class="site-navigation text-right ml-auto d-none d-lg-block fixed-top" role="navigation">
                 <ul class="site-menu main-menu js-clone-nav ml-auto ">
-                    <li class="active"><a href="/home" class="nav-link">Beranda</a></li>
+                    <li class="active"><a href="/" class="nav-link">Beranda</a></li>
                     <li><a href="/list" class="nav-link">Mobil</a></li>
                     <li><a href="/about" class="nav-link">Tentang</a></li>
                     <li><a href="/contact" class="nav-link">Kontak</a></li>
@@ -87,7 +87,7 @@
 
               <div class="intro">
                 <h1><strong>Kontak</strong></h1>
-                <div class="custom-breadcrumbs"><a href="/home">Beranda</a> <span class="mx-2">/</span> <strong>Kontak</strong></div>
+                <div class="custom-breadcrumbs"><a href="/">Beranda</a> <span class="mx-2">/</span> <strong>Kontak</strong></div>
               </div>
 
             </div>

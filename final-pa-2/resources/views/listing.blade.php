@@ -61,17 +61,23 @@
 
                         <nav class="site-navigation text-right ml-auto d-none d-lg-block fixed-top" role="navigation">
                             <ul class="site-menu main-menu js-clone-nav ml-auto ">
-                                <li class="active"><a href="/home" class="nav-link">Beranda</a></li>
+                                <li class="active"><a href="/" class="nav-link">Beranda</a></li>
                                 <li><a href="/list" class="nav-link">Mobil</a></li>
                                 <li><a href="/about" class="nav-link">Tentang</a></li>
                                 <li><a href="/contact" class="nav-link">Kontak</a></li>
                                 <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
-                                <li><strong> Selamat datang,{{ auth()->user()->name }}</strong></li>
+                                <li> @auth
+                                    <strong> Selamat datang,{{ auth()->user()->name }}</strong>
+                                    @else
+                                    <a href="/login">Login</a>
+                                @endauth</li>
                                 <li>
+                                    @auth
                                     <form action="/logout" method="post">
-                                        @csrf
-                                        <button type="submit" class="dropdown-item text-danger"> <span class="icon-sign-out"></span>&nbsp;Keluar</button>
-                                      </form>
+                                @csrf
+                                <button type="submit" class="dropdown-item text-danger"> <span class="icon-sign-out"></span>&nbsp;Keluar</button>
+                              </form>
+                                @endauth
                                 </li>
 
                             </ul>
@@ -93,7 +99,7 @@
 
                         <div class="intro">
                             <h1><strong>Mobil</strong></h1>
-                            <div class="custom-breadcrumbs"><a href="/home">Beranda</a> <span class="mx-2">/</span>
+                            <div class="custom-breadcrumbs"><a href="/">Beranda</a> <span class="mx-2">/</span>
                                 <strong>Mobil</strong></div>
                         </div>
 
@@ -150,7 +156,16 @@
                                 <div>
                                     <p><ion-icon name="location-outline"></ion-icon>
                                         <span class="icon-map"></span> &nbsp;{{$item->lokasi}}
-                                    <p><a href="/booking/{{$item->id_mobil}}" class="btn btn-primary btn-sm">Rental</a></p>
+
+                                        @auth
+                                        <p><a href="/booking/{{$item->id_mobil}}" class="btn btn-primary btn-sm"
+                                            type="submit">Rental</a></p>
+
+                                            @else
+                                            <p><a href="/login" class="btn btn-primary btn-sm"
+                                                type="submit">Rental</a></p>
+                                    @endauth
+
                                 </div>
                             </div>
 
