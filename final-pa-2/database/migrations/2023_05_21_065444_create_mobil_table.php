@@ -20,7 +20,6 @@ return new class extends Migration
             $table->string('tipe_mobil');
             $table->string('kapasitas');
             $table->string('gambar');
-            $table->string('status');
             $table->timestamps();
         });
     }
