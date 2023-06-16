@@ -23,7 +23,7 @@ class AuthController extends Controller
             if(auth()->user()->role == "admin"){
                 return redirect('/admin');
             }else{
-                return redirect('/home');
+                return redirect('/');
             }
         }
         return back()->with('warning', 'Email atau password salah!')->onlyInput('email');
@@ -33,7 +33,7 @@ class AuthController extends Controller
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-        return redirect('/');
+        return redirect('/login');
     }
 
     public function logout(Request $request){
@@ -43,6 +43,6 @@ class AuthController extends Controller
 
     $request->session()->regenerateToken();
 
-    return redirect('/');
+    return redirect('/login');
     }
 }

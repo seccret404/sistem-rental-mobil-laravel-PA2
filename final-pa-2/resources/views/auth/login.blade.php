@@ -42,10 +42,16 @@
                     <div class="text-center mb-4">
                 <a href="." class="navbar-brand navbar-brand-autodark"><img src="marsada.png" height="170px" alt=""></a>
               </div>
-                  <h2 class="h2 text-center mb-4">Login to your account</h2>
+                  <h2 class="h2 text-center mb-4">Login Ke Akun Anda</h2>
                  @if (Session::get('warning'))
-                 <div class="alert bg-danger">
-                    <p class="text-white">{{Session::get('warning')}}</p>
+                 <div class="alert">
+                    <p class="text-danger">{{Session::get('warning')}}</p>
+                 </div>
+
+                 @endif
+                 @if (Session::get('berhasil'))
+                 <div class="alert">
+                    <p class="text-success">{{Session::get('berhasil')}}</p>
                  </div>
 
                  @endif

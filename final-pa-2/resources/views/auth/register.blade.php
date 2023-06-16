@@ -49,40 +49,38 @@
                  </div>
 
                  @endif
-                  <form action="/registered" method="post" autocomplete="off" novalidate>
+                  <form action="/registered" method="post" autocomplete="off">
                     @csrf
                     <div class="mb-3">
                         <label class="form-label">Nama</label>
-                        <input type="email" class="form-control" name="name" placeholder="nama...." autocomplete="off">
+                        <input type="text" class="form-control" name="name" required placeholder="nama...." autocomplete="off">
                       </div>
+
 
                     <div class="mb-3">
                       <label class="form-label">Email</label>
-                      <input type="email" class="form-control" name="email" placeholder="your@email.com" autocomplete="on">
+                      <input type="email" class="form-control" name="email" required placeholder="your@email.com" autocomplete="on">
                     </div>
+
                     <div class="mb-3">
-                        <label class="form-label">No Hp</label>
-                        <input type="email" class="form-control" name="no_hp" placeholder="08***" autocomplete="off">
+                        <label class="form-label">No Telepon</label>
+                        <input type="text" class="form-control reunded-top @error('no_hp') is-invalid @enderror" name="no_hp" required placeholder="08***" autocomplete="off">
+                        @error('no_hp')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
                       </div>
                     <div class="mb-2">
                       <label class="form-label">
                         Password
                       </label>
                       <div class="input-group input-group-flat">
-                        <input type="password" name="password" class="form-control"  placeholder="Your password"  autocomplete="off">
-                        <span class="input-group-text">
-                          <a href="#" class="link-secondary" title="Show password" data-bs-toggle="tooltip"><!-- Download SVG icon from http://tabler-icons.io/i/eye -->
-                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" /><path d="M22 12c-2.667 4.667 -6 7 -10 7s-7.333 -2.333 -10 -7c2.667 -4.667 6 -7 10 -7s7.333 2.333 10 7" /></svg>
-                          </a>
-                        </span>
+                        <input type="password" name="password" class="form-control reunded-top @error('password') is-invalid @enderror" required  placeholder="Your password"  autocomplete="off">
+                        @error('password')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
                       </div>
                     </div>
-                    <div class="mb-2">
-                      <label class="form-check">
-                        <input type="checkbox" class="form-check-input"/>
-                        <span class="form-check-label">Ingat saya</span>
-                      </label>
-                    </div>
+
                     <div class="form-footer">
                       <button type="submit" class="btn btn-primary w-100">register</button>
                     </div>
@@ -92,7 +90,7 @@
                   </form>
                 </div>
                 {{-- <div class="hr-text">or</div> --}}
-                
+
             </div>
           </div>
           {{-- <div class="col-lg d-none d-lg-block">

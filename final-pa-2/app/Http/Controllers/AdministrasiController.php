@@ -18,29 +18,49 @@ class AdministrasiController extends Controller
         return view('AdminPage.administrasi',compact('nama','admin','tp','profit'));
     }
 
-    public function adpros(Request $requset){
-        $costumer = $requset->nama_rentaler;
-        $mobil = $requset->nama;
-        $dp = $requset->dana_dp;
-        $hj = $requset->harga_jual;
-        $as = $requset->asal_unit;
-        $tm = $requset->tipe_mobil;
-        $sopir = $requset->sopir;
-        $hb = $requset->harga_beli;
-        $p = $requset->pengeluaran;
-        $des = $requset->deskripsi;
-        $profit = $hj - $p;
+    public function adpros(Request $request){
+        $costumer = $request->nama_rentaler;
+        $mobil = $request->nama;
+        $dp = $request->dana_dp;
+        $hb = $request->harga_beli;
+        $hj = $request->harga_jual;
+        $thj = $request->tharga_jual;
+        $thb = $request->tharga_beli;
+        $as = $request->asal_unit;
+        $jumlah_unit = $request->jmlh_unit;
+        $jumlah_hari = $request->jmlh_hari;
+        $tipe = $request->tipe;
+        $sopir = $request->sopir;
+        $hb = $request->harga_beli;
+        $p = $request->pengeluaran;
+        $des = $request->deskripsi;
+
+        $diskon = $request->diskon;
+
+
+
+        $totalbeli = $jumlah_hari * $jumlah_unit * $hb;
+        $totaljual = $jumlah_hari * $jumlah_unit * $hj;
+        $tdiskon = ($diskon/100)*$totaljual;
+        $fdiskon = $totaljual - $tdiskon;
+
+        $profit = $fdiskon - $p;
 
         $data = [
             'nama_rentaler'=>$costumer,
             'nama'=>$mobil,
             'dana_dp'=>$dp,
             'harga_jual'=>$hj,
+            'harga_beli'=>$hb,
             'asal_unit'=>$as,
+            'jmlh_unit'=>$jumlah_unit,
+            'jmlh_hari'=>$jumlah_hari,
             'profit'=>$profit,
             'sopir'=>$sopir,
-            'tipe_mobil'=>$tm,
-            'harga_beli'=>$hb,
+            'type'=>$tipe,
+            'diskon'=>$diskon,
+            'tharga_beli'=>$totalbeli,
+            'tharga_jual'=>$fdiskon,
             'pengeluaran'=>$p,
             'deskripsi'=>$des
 

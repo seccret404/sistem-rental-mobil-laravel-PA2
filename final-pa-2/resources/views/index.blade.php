@@ -73,11 +73,25 @@
                                 <li><a href="/about" class="nav-link">Tentang</a></li>
                                 <li><a href="/contact" class="nav-link">Kontak</a></li>
                                 <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
-                                <li><strong> Selamat datang,{{ auth()->user()->name }}</strong></li>
-                                <li><form action="/logout" method="post">
+
+                                <li>
+                                    @auth
+                                        <strong> Selamat datang,{{ auth()->user()->name }}</strong>
+                                        @else
+                                        <a href="/login">Login</a>
+                                    @endauth
+
+                                </li>
+                                <li>
+                                    @auth
+                                        <form action="/logout" method="post">
                                     @csrf
                                     <button type="submit" class="dropdown-item text-danger"> <span class="icon-sign-out"></span>&nbsp;Keluar</button>
-                                  </form></li>
+                                  </form>
+                                    @endauth
+
+
+                                </li>
 
                             </ul>
                         </nav>
@@ -231,8 +245,15 @@
                                             <span>&nbsp;{{$item->lokasi}}</span>
                                         </p>
                                     </span>
-                                    <p><a href="/booking/{{$item->id_mobil}}" class="btn btn-primary btn-sm"
+                                    @auth
+                                        <p><a href="/booking/{{$item->id_mobil}}" class="btn btn-primary btn-sm"
                                             type="submit">Rental</a></p>
+
+                                            @else
+                                            <p><a href="/login" class="btn btn-primary btn-sm"
+                                                type="submit">Rental</a></p>
+                                    @endauth
+
                                 </div>
                             </div>
 
