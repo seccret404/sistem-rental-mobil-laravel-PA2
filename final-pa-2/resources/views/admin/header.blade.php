@@ -143,7 +143,7 @@
             </div>
           </a>
           <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-            <a href="./sign-in.html" class="dropdown-item"><form action="/logout" method="post">
+            <a href="#" class="dropdown-item"><form action="/logout" method="post">
                 @csrf
                 <button type="submit" class="dropdown-item text-dark"><i class="bi bi-box-arrow-left"></i>&nbspLog Out</button>
               </form></a>

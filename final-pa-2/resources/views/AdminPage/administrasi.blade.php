@@ -50,7 +50,7 @@
                                         <path d="M5 12l14 0"></path>
                                     </svg>Tambah Data Administrasi </a>
                             </div>
-                            <div class="col-lg-6">
+                            <div class="col-lg-3">
                                 <a href="{{ url('/pdf') }}" class="btn btn-success" id="tambah_karyawan"><svg
                                         xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-plus"
                                         width="24" height="24" viewBox="0 0 24 24" stroke-width="2"
@@ -59,7 +59,7 @@
                                         <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                                         <path d="M12 5l0 14"></path>
                                         <path d="M5 12l14 0"></path>
-                                    </svg>PDF</a>
+                                    </svg>Ekspor PDF</a>
                             </div>
                         </div>
                         {{-- <div class="row mt-2">
@@ -404,7 +404,7 @@
                             </div>
                         </div>
                     </div>
-                 
+
                     <div class="row">
                         <div class="col-12">
                             <div class="form-label">Diskon</div>
@@ -445,7 +445,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="row">
                         <div class="col-12">
                             <div class="mb-3">

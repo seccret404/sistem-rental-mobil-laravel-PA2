@@ -325,11 +325,11 @@
 
 
 
-        <section class="ftco-section" style="margin-top:-90px!important">
+        <section class="ftco-section bg-info" style="margin-top:-90px!importan;opacity::backdrop">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-12 text-center">
-                        <h2 class="heading-section mb-5 pb-md-4" ><strong>Testimoni</strong></h2>
+                    <div class="col-md-12 text-center ">
+                        <h2 class="heading-section text-white mb-5 pb-md-4" ><strong>Testimoni</strong></h2>
                     </div>
                     <div class="col-md-12">
                         <div class="featured-carousel owl-carousel">
@@ -337,13 +337,7 @@
 
                             <div class="item">
                                 <div class="blog-entry">
-                                    <a href="#" class="block-20 d-flex align-items-start"
-                                        style="background-image: url({{  url('asset/testimoni/'.$item->gambar) }});height:12cm">
-                                        {{-- <div class="meta-date text-center p-2">
-                                            <span class="day">26</span>
-                                            <span class="mos">Nov.</span>
-                                            <span class="yr">2019</span>
-                                        </div> --}}
+                                    <a href="#" class="block-20 d-flex align-items-start" style="background-image: url({{  url('asset/testimoni/'.$item->gambar) }});height:12cm">
                                     </a>
                                     <div class="text border border-top-0 p-4">
 
@@ -367,7 +361,7 @@
         </section>
 
 
-        <footer class="site-footer" style="margin-top:-3cm;padding-bottom:-7cm;height:3cm">
+        <footer class="site-footer " style="margin-top:-3cm;padding-bottom:-7cm;height:3cm" >
             <hr >
             <div class="container">
                 <div class="row text-center">

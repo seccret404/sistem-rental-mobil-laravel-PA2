@@ -44,19 +44,25 @@
                 <div class="row">
                     <div class="col">
 
-                            <strong>Ingin Rental Mobil di Toba ? Perhatikan Tips Berikut.</strong><br>
-                            <ol>
-                                <li>
-                                    Anda membutuhkan kendaraan selama di Toba? Rental Mobil Toba bisa menjadi solusinya.
-                                    Tersedia banyak armada yang bisa dipilih sesuai kebutuhan dengan berbagai rute serta medan jalanan.
-                                </li>
-                                <li>
-                                    Apalagi, untuk memilih rental kendaraan terbaik, perlu me   mpertimbangkan berbagai hal krusial.
-                                    Jangan sampai sudah mengeluarkan uang namun tidak mendapatkan fasilitas dan kenyamanan seperti yang diharapkan.
-                                     Jadi, simak ulasan di bawah ini agar perjalanan nyaman dan menyenangkan.
+                              <strong class="text-primary" style="padding-left: 25px;padding-bottom:6px">Ingin Melakukan Rental? </strong><strong>  Perhatikan Tips Berikut.</strong><br>
 
+
+                              <ol style="text-align: justify">
+                                <li>
+                                   Masukkanlah alamat tempat tinggal anda dengan benar dan jujur.
+                                </li><br>
+                                <li>
+                                   Perhatikan data tanggal keberangkatan dan kepulangan anda.
                                 </li>
+                                <li>
+                                    Jika memiliki pesan kepada Marsadatrip, silahkan tinggalkan pesan anda pada form <i>pesan.</i>
+                                </li>
+                                <li>
+                                    Terakhir, dengan klik <b>Rental</b>data akan segera dikirimkan ke Marsadatrip melalui whatsapp untuk melakukan konfirmasi dan negoisasi harga.
+                                </li>
+
                             </ol>
+                            <strong><h3 class="text-center ">Horas! Marsadatrip</h31></strong>
 
 
                     </div>
@@ -77,19 +83,19 @@
               <br>
                   <h2 class="h2 text-center mb-4">Isi Data Rental</h2>
                  @if (Session::get('warning'))
-                 <div class="alert bg-warning">
-                    <p>{{Session::get('warning')}}</p>
+                 <div class="alert">
+                    <p class="text-danger">{{Session::get('warning')}}</p>
                  </div>
 
                  @endif
-                  <form action="/booking/proses" method="post" autocomplete="off">
+                  <form action="/booking/proses" method="post">
                     @csrf
                     <div class="mb-3">
                         <label class="form-label">Nama</label>
                         <input type="email" class="form-control" id="nama" readonly value="{{$nama}}" name="nama" placeholder="nama...." autocomplete="off">
                       </div>
                     <div class="mb-3">
-                        <label class="form-label">No Hp</label>
+                        <label class="form-label">No Telepon</label>
                         <input type="email" class="form-control" id="hp" readonly value="{{$no_hp}}" name="no_hp" placeholder="08***" autocomplete="off">
                       </div>
                       <div class="mb-3">
@@ -109,7 +115,7 @@
                             <div class="col-6">
                                 <div class="input-icon mb-2">
                                 <label class="form-label">Tanggal Berangkat</label>
-                                <input class="form-control " id="go" required name="booking_in" type="date" placeholder="Select a date" id="datepicker-icon" >
+                                <input class="form-control " id="go" required name="booking_in" type="date" min="today" placeholder="Select a date" id="datepicker-icon" >
                                 <span class="input-icon-addon"><!-- Download SVG icon from http://tabler-icons.io/i/calendar -->
                                 </span>
                               </div>
@@ -117,7 +123,7 @@
                             <div class="col-6">
                                 <div class="input-icon mb-2">
                                     <label class="form-label">Tanggal Kembali</label>
-                                    <input class="form-control " id="back" required name="booking_out" type="date" placeholder="Select a date" id="datepicker-icon" >
+                                    <input class="form-control " id="back" required name="booking_out" min="today" type="date" placeholder="Select a date" id="datepicker-icon" >
                                     <span class="input-icon-addon"><!-- Download SVG icon from http://tabler-icons.io/i/calendar -->
                                     </span>
                                   </div>

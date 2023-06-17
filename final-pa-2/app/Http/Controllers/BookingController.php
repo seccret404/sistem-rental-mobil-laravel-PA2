@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Models\Mobil;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -20,6 +21,7 @@ class BookingController extends Controller
     }
 
     public function addbooking(Request $request){
+        $sekarang = Carbon::now();
         $nama = Auth::user()->name;
         $id_user = Auth::user()->id;
         $hp = Auth::user()->no_hp;
@@ -30,17 +32,12 @@ class BookingController extends Controller
         $out = $request->booking_out;
         $pesan = $request->pesan;
 
-        //  $telepon = +6282288440696;
-
-
-        // // Enkripsi nomor telepon untuk keamanan
-        // $encryptedPhone = Crypt::encryptString($telepon);
-
-        // Membuat tautan API WhatsApp
-
-//         return redirect($apiUrl);
-//     }
-
+        if($in < $sekarang){
+            return back()->with(['warning'=>"Tanggal tidak dapat di input,tanggal sudah kadaluarsa"]);
+        }
+        if($out < $sekarang){
+            return back()->with(['warning'=>"Tanggal tidak dapat di input,tanggal sudah kadaluarsa"]);
+        }
 
         $data = [
             'id_user'=>$id_user,
