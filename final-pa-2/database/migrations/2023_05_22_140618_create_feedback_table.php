@@ -13,7 +13,8 @@ return new class extends Migration
     {
         Schema::create('feedback', function (Blueprint $table) {
             $table->id('id_feed');
-            $table->integer('id_user');
+            $table->bigInteger('id_user')->unsigned()->index()->nullable();
+            $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
             $table->string('nama');
             $table->string('email');
             $table->string('pesanku');

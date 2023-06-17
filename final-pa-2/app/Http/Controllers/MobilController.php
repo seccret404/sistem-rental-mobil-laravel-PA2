@@ -32,6 +32,7 @@ class MobilController extends Controller
         $file->move($tujuanFile,$namafile);
 
         $mobil = new Mobil;
+        $mobil->id_mobil = $request->id_mobil;
         $mobil->nama_mobil = $request->nama_mobil;
         $mobil->lokasi = $request->lokasi;
         $mobil->no_plat = $request->no_plat;

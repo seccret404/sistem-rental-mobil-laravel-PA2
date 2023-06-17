@@ -104,6 +104,7 @@
                       </div>
                       <div class="mb-3">
                         <label class="form-label">Plat Mobil</label>
+                        <input type="text" value="{{$booking->id_mobil}}" hidden name="id_mobil">
                         <input type="text" class="form-control" id="plat" readonly value="{{$booking->no_plat}}" name="no_plat" placeholder="-----" autocomplete="off">
                       </div>
                       <div class="mb-3">

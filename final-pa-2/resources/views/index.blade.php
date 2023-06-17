@@ -361,8 +361,8 @@
         </section>
 
 
-        <footer class="site-footer " style="margin-top:-3cm;padding-bottom:-7cm;height:3cm" >
-            <hr >
+        <footer class="site-footer " style="margin-top:-2cm;padding-bottom:-7cm;height:3cm" >
+
             <div class="container">
                 <div class="row text-center">
                     <div class="col-md-12">
