@@ -337,15 +337,15 @@
 
                             <div class="item">
                                 <div class="blog-entry">
-                                    <a href="#" class="block-20 d-flex align-items-start" style="background-image: url({{  url('asset/testimoni/'.$item->gambar) }});height:12cm">
+                                    <a  class="block-20 d-flex align-items-start" style="background-image: url('{{  url('asset/testimoni/'.$item->gambar) }}');height:12cm">
                                     </a>
-                                    <div class="text border border-top-0 p-4">
+                                    <div class="text border border-top-0 p-4 bg-white">
 
-                                        <p>{{$item->deskripsi}}</p>
+                                        <p class="text-muted">{{$item->deskripsi}}</p>
                                         <div class="d-flex align-items-center mt-4">
-                                            <p class="mb-0">{{$item->created_at}}</p>
+                                            <p class="mb-0 text-dark">{{$item->created_at}}</p>
                                             <p class="ml-auto meta2 mb-0">
-                                                <a href="#" class="mr-2">{{$item->nama_pelanggan}}</a>
+                                                <a href="#" class="mr-2 text-info">{{$item->nama_pelanggan}}</a>
 
                                             </p>
                                         </div>
