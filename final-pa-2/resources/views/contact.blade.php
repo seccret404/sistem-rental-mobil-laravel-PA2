@@ -48,7 +48,7 @@
 
             <div class="col-3">
               <div class="site-logo">
-                <a href="index.html"><strong>CarRental</strong></a>
+                <img src="logo.png" alt="" width="100px">
               </div>
             </div>
 
@@ -172,7 +172,7 @@
         </div>
       </div>
     </div>
-   
+
     <footer class="site-footer" style="margin-top:-3cm;padding-bottom:-7cm;height:3cm">
         <hr >
         <div class="container">
