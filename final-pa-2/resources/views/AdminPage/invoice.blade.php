@@ -11,7 +11,7 @@
             font-family: Georgia, 'Times New Roman', Times, serif;
         }
 
-        table, td, th {  
+        table, td, th {
             text-align: center;
             font-size: 12px;
             border: 1px solid black;
@@ -21,7 +21,7 @@
         table {
             width: 100%;
         }
-        
+
         .header {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -83,14 +83,14 @@
                     </thead>
                     <tbody>
                         @php
-                            $counter = 1;   
+                            $counter = 1;
                         @endphp
                         @foreach ($administrasi as $adm)
                             <tr>
                                 <td>{{ $counter }}</td>
                                 <td>{{ $adm->jmlh_unit }}</td>
                                 <td>{{ $adm->nama }}</td>
-                                <td>{{ $adm->pengeluaran }}</td>
+                                <td>{{ $adm->profit }}</td>
                                 <td>{{ $adm->updated_at }}</td>
                             </tr>
                             <tr>
@@ -100,7 +100,7 @@
                                 </td>
                             </tr>
                         @php
-                            $counter++;   
+                            $counter++;
                         @endphp
                         @endforeach
                     </tbody>

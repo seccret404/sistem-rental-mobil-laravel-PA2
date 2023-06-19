@@ -103,19 +103,17 @@
                                             <th>No</th>
                                             <th>Nama Rentaler</th>
                                             <th>Nama Mobil</th>
-                                            <th>Asal Sopir</th>
-                                            <th>Dana DP</th>
-                                            <th>Harga Beli</th>
-                                            <th>Harga Jual</th>
-                                            <th>Asal Unit</th>
-                                            <th>Type</th>
-                                            <th>Total Harga Beli</th>
-                                            <th>Total Harga Jual</th>
+                                            <th>Jumlah Hari</th>
+                                            <th>Jumlah Unit</th>
+                                            <th>Harga Perhari</th>
                                             <th>Diskon</th>
+                                            <th>Asal Unit</th>
+                                            <th>Asal Sopir</th>
+                                            <th>Nama Sopir</th>
                                             <th>Pengeluaran</th>
                                             <th>Deskripsi</th>
                                             <th>Profit</th>
-                                            <th>Aksi</th>
+                                            <th>Aksi     .</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -123,19 +121,18 @@
                                         <tr>
                                             <td>{{$loop->iteration }}</td>
                                             <td>{{$item->nama_rentaler}}</td>
-                                            <td>{{$item->nama}}</td>
-                                            <td>{{$item->sopir}}</td>
-                                            <td>Rp.{{number_format($item->dana_dp)}}</td>
-                                            <td>Rp.{{number_format($item->harga_jual)}}</td>
-                                            <td>Rp.{{number_format($item->harga_beli)}}</td>
-                                             <td>{{$item->asal_unit}}</td>
-                                            <td>{{$item->type}}</td>
-                                            <td>{{number_format($item->tharga_beli)}}</td>
-                                            <td>{{number_format($item->tharga_jual)}}</td>
+                                            <td>{{$item->nama_mobil}}</td>
+                                            <td>{{$item->jmlh_hari}}</td>
+                                            <td>{{$item->jmlh_unit}}</td>
+                                            <td>{{$item->harga_perhari}}</td>
                                             <td>{{$item->diskon}}</td>
-                                            <td>Rp.{{number_format($item->pengeluaran)}}</td>
+                                            <td>{{$item->asal_unit}}</td>
+                                            <td>{{$item->asal_sopir}}</td>
+                                            <td>{{$item->nama_sopir}}</td>
+                                            <td>{{$item->pengeluaran}}</td>
                                             <td>{{$item->deskripsi}}</td>
-                                            <td>Rp.{{number_format($item->profit)}}</td>
+                                            <td>{{$item->profit}}</td>
+
                                              <td>
                                                 <a href="/admin/edit/{{$item->id}}" class="btn btn-primary" ><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-pencil-plus" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                                     <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
@@ -191,23 +188,9 @@
     </div>
 </div>
 </div>
-{{--modal edit --}}
-<div class="modal modal-blur fade" id="modaledit_karyawan" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Edit Data</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body" id="loadeditform">
 
-            </div>
-
-        </div>
-    </div>
-</div>
 {{-- modal add --}}
-<div class="modal modal-blur fade" id="modal_karyawan" tabindex="-1" role="dialog" aria-hidden="true">
+{{-- <div class="modal modal-blur fade" id="modal_karyawan" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -455,7 +438,7 @@
 
         </div>
     </div>
-</div>
+</div> --}}
 
 
 <script>

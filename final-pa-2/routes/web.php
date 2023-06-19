@@ -65,6 +65,7 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
         Route::get('/pemesanan', [PemesananController::class, 'index'])->name('pemesanan');
         Route::get('/pemesanan/{id}', [PemesananController::class, 'detail'])->name('detail.pemesanan');
         Route::post('/pemesanan-status/{idPemesanan}', [PemesananController::class, 'status'])->name('status.pemesanan');
+        Route::post('/pemesanan-status/delete/{idPemesanan}', [PemesananController::class, 'deteteOrder'])->name('status.pemesanan');
 
         Route::get('/pdf', [AdministrasiController::class, 'pdf']);
 
