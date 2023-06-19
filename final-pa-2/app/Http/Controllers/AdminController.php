@@ -27,8 +27,8 @@ class AdminController extends Controller
 
     public function testimoni(){
         $tes = Testimoni::all();
-        $pemesanan = DB::table('pemesanan')->get();
-        return view('AdminPage.testimoni',compact('tes'));
+        $pemesanan = Pemesanan::latest()->get();
+        return view('AdminPage.testimoni',compact('tes','pemesanan'));
     }
 
     public function deletetes($id){
