@@ -20,13 +20,11 @@ return new class extends Migration
             $table->string('tipe_mobil');
             $table->string('kapasitas');
             $table->string('gambar');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
         Schema::dropIfExists('mobil');

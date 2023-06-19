@@ -65,6 +65,7 @@
                                 <li><a href="/list" class="nav-link">Mobil</a></li>
                                 <li><a href="/about" class="nav-link">Tentang</a></li>
                                 <li><a href="/contact" class="nav-link">Kontak</a></li>
+                                <li><a href="/history" class="nav-link">History</a></li>
                                 <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
                                 <li> @auth
                                     <strong> Selamat datang,{{ auth()->user()->name }}</strong>
@@ -136,9 +137,6 @@
                             </div>
                             <div class="listing-contents h-100">
                                 <h3>{{$item->nama_mobil}}</h3>
-                                {{-- <div class="rent-price">
-                  <strong>$389.00</strong><span class="mx-1">/</span>day
-                </div> --}}
                                 <div class="d-block d-md-flex mb-3 border-bottom pb-3">
                                     <div class="listing-feature pr-3">
                                         <span class="caption">Kapasitas:</span>

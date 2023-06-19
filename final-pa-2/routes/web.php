@@ -82,5 +82,7 @@ Route::middleware(['auth', 'role:user'])->group(function () {
         Route::get('/booking/{id_mobil}',[BookingController::class, 'index']);
         Route::post('/booking/proses/{id}',[BookingController::class, 'addbooking']);
 
+        Route::get('/history', [PemesananController::class, 'history']);
+
 });
 //end-auth

@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Mobil;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Pemesanan extends Model
 {
@@ -21,6 +22,11 @@ class Pemesanan extends Model
         'booking_in',
         'booking_out',
         'pesan',
-        'status'
+        'status',
+        'image'
     ];
+
+    public function cars() {
+        return $this->belongsTo(Mobil::class, 'id_mobil', 'id_mobil');
+    }
 }

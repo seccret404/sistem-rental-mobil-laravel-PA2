@@ -72,6 +72,7 @@
                                 <li><a href="/list" class="nav-link">Mobil</a></li>
                                 <li><a href="/about" class="nav-link">Tentang</a></li>
                                 <li><a href="/contact" class="nav-link">Kontak</a></li>
+                                <li><a href="/history" class="nav-link">History</a></li>
                                 <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
 
                                 <li>

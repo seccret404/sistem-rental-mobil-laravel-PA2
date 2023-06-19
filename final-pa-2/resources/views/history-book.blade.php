@@ -7,9 +7,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/4.5.6/css/ionicons.min.css">
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
 
     <link rel="stylesheet" href="fonts/icomoon/style.css">
@@ -21,6 +19,8 @@
     <link rel="stylesheet" href="css/owl.theme.default.min.css">
     <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
     <link rel="stylesheet" href="css/aos.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="css/style.css">
@@ -66,21 +66,11 @@
                     <li><a href="/contact" class="nav-link">Kontak</a></li>
                     <li><a href="/history" class="nav-link">History</a></li>
                     <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
-                    <li> @auth
-                        <strong> Selamat datang,{{ auth()->user()->name }}</strong>
-                        @else
-                        <a href="/login">Login</a>
-                    @endauth
-</li>
-                    <li>
-                        @auth
-                        <form action="/logout" method="post">
-                    @csrf
-                    <button type="submit" class="dropdown-item text-danger"> <span class="icon-sign-out"></span>&nbsp;Keluar</button>
-                  </form>
-                    @endauth
-                        </li>
-
+                    <li><strong> Selamat datang,{{ auth()->user()->name }}</strong></li>
+                    <li><form action="/logout" method="post">
+                        @csrf
+                        <button type="submit" class="dropdown-item text-danger"> <span class="icon-sign-out"></span>&nbsp;Keluar</button>
+                      </form></li>
                 </ul>
               </nav>
             </div>
@@ -99,8 +89,8 @@
             <div class="col-lg-5">
 
               <div class="intro">
-                <h1><strong>Tentang</strong></h1>
-                <div class="custom-breadcrumbs"><a href="/">Beranda</a> <span class="mx-2">/</span> <strong>Tentang</strong></div>
+                <h1><strong>History</strong></h1>
+                <div class="custom-breadcrumbs"><a href="/">Beranda</a> <span class="mx-2">/</span> <strong>History</strong></div>
               </div>
 
             </div>
@@ -108,62 +98,57 @@
         </div>
       </div>
 
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">No</th>
+            <th scope="col">Nama Mobil</th>
+            <th scope="col">Tanggal Akhir</th>
+            <th scope="col">Tanggal Awal</th>
+            <th scope="col">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          @foreach ($pesanans as $pesanan)
+            <tr>
+              <th scope="row">1</th>
+              <td>{{ $pesanan->nama_mobil }}</td>
+              <td>{{ $pesanan->booking_in }}</td>
+              <td>{{ $pesanan->booking_out }}</td>
+              <td>
+                 @if($pesanan->status == 0) 
+                  Pesanan mobil anda belum di konfirmasi
+                 @endif
+                 @if($pesanan->status == 1)
+                  Pesanan mobil anda telah di konfirmasi
+                 @endif
+                 @if($pesanan->status == 2)
+                  Mobil anda sedang dalam perjalanan
+                 @endif
+              </td>
+            </tr>
+          @endforeach
+        </tbody>
+      </table>
 
-
-    <div class="site-section bg-white">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6 mb-5 mb-lg-0 order-lg-2">
-            <img src="images/hero_2.jpg" alt="Image" class="img-fluid rounded" data-aos="fade-down-left">
-          </div>
-          <div class="col-lg-4 mr-auto" data-aos="zoom-in-up">
-            <h2>Mengapa Harus MarsadaTrip?</h2>
-            <p>MarsadaTrip menyediakan kendaraan yang selalu prima, siap mengantar ke seluruh tujuan.
-                 Banyak pelanggan yang menggunakan jasa rental ini untuk keperluan dinas, pernikahan, wisuda, dan berwisata.
-                  Semua kendaraan yang tersedia selalu bersih dan wangi.
-                 Hal ini membuat penumpang akan nyaman berkendara dan menempuh perjalanan dengan menggunakan unit dari rental mobil Toba..</p>
-         </div>
-        </div>
-      </div>
-    </div>
-
-
-
-
-
-    <div class="site-section bg-primary py-5">
+    <footer class="site-footer" style="margin-top:-3cm;padding-bottom:-7cm;height:3cm">
+        <hr >
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-7 mb-4 mb-md-0">
-                    <h2 class="mb-0 text-white">Tunggu apa lagi?</h2>
-                    <p class="mb-0 opa-7">Lengkapi perjalanan anda dengan melakukan pemesanan sekarang juga!</p>
+            <div class="row text-center">
+                <div class="col-md-12">
+                    <div class=" ">
+                        <p>
+                            Copyright &copy;marsadatrip <ul class="list-unstyled social">
+                                <li><a href="#"><span class="icon-facebook"></span></a></li>
+                                <li><a href="#"><span class="icon-instagram"></span></a></li>
+                            </ul>
+                        </p>
+                    </div>
                 </div>
-                <div class="col-lg-5 text-md-right">
-                    <a href="/list" class="btn btn-primary btn-white">Rental mobil sekarang!</a>
-                </div>
+
             </div>
         </div>
-    </div>
-
-
-<footer class="site-footer" style="margin-top:-3cm;padding-bottom:-7cm;height:3cm">
-
-    <div class="container">
-        <div class="row text-center">
-            <div class="col-md-12">
-                <div class=" ">
-                    <p>
-                        Copyright &copy;marsadatrip <ul class="list-unstyled social">
-                            <li><a href="#"><span class="icon-facebook"></span></a></li>
-                            <li><a href="#"><span class="icon-instagram"></span></a></li>
-                        </ul>
-                    </p>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</footer>
+    </footer>
 
     </div>
 

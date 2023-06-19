@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Auth;
 class PemesananController extends Controller
 {
     public function index() {
-        $pemesananList = DB::select('SELECT * FROM pemesanan');
+        $pemesananList = Pemesanan::all();
         return view('AdminPage.pemesanan', compact('pemesananList'));
     }
 
@@ -24,5 +24,11 @@ class PemesananController extends Controller
         ->update(['status' => 1]);
 
         return redirect()->route('pemesanan')->with('success', 'Pemesanan berhasil dikonfirmasi');
+    }
+
+    public function history() {
+        $pesanans = Pemesanan::where('id_user', Auth::user()->id)->get()->sortByDesc('updated_at');
+
+        return view('history-book', compact('pesanans'));
     }
 }

@@ -21,10 +21,11 @@ class BookingController extends Controller
     }
 
     public function addbooking(Request $request, $id){
+        $cars = Mobil::find($id);
         $sekarang = Carbon::now();
         $nama = Auth::user()->name;
         $id_user = Auth::user()->id;
-        $id_mobil = $id;
+        $id_mobil = $cars->id_mobil;
         $hp = Auth::user()->no_hp;
         $plat = $request->no_plat;
         $mobil = $request->nama_mobil;
@@ -34,6 +35,7 @@ class BookingController extends Controller
         $out = $request->booking_out;
         $outs = Carbon::parse($out);
         $pesan = $request->pesan;
+        $image = $cars->gambar;
         // dd($ins, $outs);
         // dd($id_mobil);
 
@@ -54,7 +56,8 @@ class BookingController extends Controller
             'alamat'=>$alamat,
             'booking_in'=>$in,
             'booking_out'=>$out,
-            'pesan'=>$pesan
+            'pesan'=>$pesan,
+            'image'=>$image,
         ];
 
         $idPemesanan = DB::table('pemesanan')->insertGetId($data);

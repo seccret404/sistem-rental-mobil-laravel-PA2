@@ -10,7 +10,7 @@ class MobilController extends Controller
 {
 
     public function mobil(){
-        $mobil = DB::table('mobil')->get();
+        $mobil = Mobil::all();
         return view('AdminPage.mobil',compact('mobil'));
     }
 
@@ -63,15 +63,15 @@ class MobilController extends Controller
 
 
         public function delete($id_mobil){
-        $delete = DB::table('mobil')->where('id_mobil', $id_mobil)->delete();
+            $mobil = Mobil::find($id_mobil);
 
-        if($delete){
-            return redirect('/mobil')->with(['success'=> "Mobil Berhasil Di Hapus!"]);
-
-        }else{
-            return redirect('/mobil')->with(['error'=> "Gagal Di Hapus!"]);
-
-        }
+            if ($mobil) {
+                $mobil->delete(); // Use the delete() method provided by Eloquent
+        
+                return redirect('/mobil')->with(['success' => "Mobil Berhasil Di Hapus!"]);
+            } else {
+                return redirect('/mobil')->with(['error' => "Gagal Di Hapus!"]);
+            }
         }
 
 }

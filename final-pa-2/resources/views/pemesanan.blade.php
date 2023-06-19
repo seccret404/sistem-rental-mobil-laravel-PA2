@@ -134,6 +134,8 @@
                             </div>
                         </div>
                       </div>
+                      <div>
+                      <img src="{{  url('asset/mobil/'.$booking->gambar) }}" alt="{{  url('asset/mobil/'.$booking->gambar) }}" style="display: none;" name="image">
                       <div class="mb-3">
                         <label class="form-label">Pesan</label>
                         <textarea class="form-control" name="pesan" rows="5">

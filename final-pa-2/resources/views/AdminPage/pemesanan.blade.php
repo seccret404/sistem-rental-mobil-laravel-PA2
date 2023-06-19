@@ -55,6 +55,7 @@
                                             $counter = 1;
                                         @endphp
                                          @foreach ($pemesananList as $item)
+                                        @if($item->status == 0)
                                         <tr>
                                             <td>{{$counter }}</td>
                                             <td>{{$item->nama_pemesan }}</td>
@@ -71,6 +72,11 @@
                                                 @endif
                                             </td>
                                         </tr>
+                                        @else
+                                        <tr>
+                                            <td colspan="6" class="text-center">Tidak ada data</td>
+                                        </tr>
+                                        @endif
                                         @php
                                             $counter++;
                                         @endphp
@@ -78,6 +84,31 @@
 
                                     </tbody>
                             </table>
+                        </div>
+                        <div class="col-12">
+                            <div class="row row-cards row-deck">
+                            @foreach ($pemesananList as $p)
+                                @if($p->status !=0)
+                                <div class="col-4">
+                                    <div class="card">
+                                    <div class="card-header">
+                                        <h3 class="card-title">{{ $p->nama_mobil }}</h3>
+                                    </div>
+                                    <div class="card-body">
+                                        <img src="{{  url('asset/mobil/'.$p->cars->gambar) }}" style="height:200px !important"
+                                    alt="Image" class="img-fluid">
+                                    </div>
+                                    <div class="card-footer">
+                                        <h5>Nama Pemesan : {{ $p->nama_pemesan }}</h5>
+                                    </div>
+                                    <div class="card-footer">
+                                        <button class="btn btn-info">Sedang Berjalan</button>
+                                    </div>
+                                 </div>
+                                </div>
+                                @endif
+                            @endforeach
+                            </div>
                         </div>
                     </div>
                 </div>

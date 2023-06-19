@@ -25,6 +25,7 @@ return new class extends Migration
             $table->date('booking_in');
             $table->date('booking_out');
             $table->string('pesan');
+            $table->string('image');
             $table->integer('status')->default(0);
             $table->timestamps();
         });

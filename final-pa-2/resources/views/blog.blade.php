@@ -61,6 +61,7 @@
                     <li><a href="/test" class="nav-link">Testimonials</a></li>
                     <li><a href="/about" class="nav-link">About</a></li>
                     <li><a href="/contact" class="nav-link">Contact</a></li>
+                    <li><a href="/history" class="nav-link">History</a></li>
                 </ul>
               </nav>
             </div>
