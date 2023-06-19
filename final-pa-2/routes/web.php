@@ -80,7 +80,7 @@ Route::middleware(['auth', 'role:user'])->group(function () {
 
         //rental-mobil
         Route::get('/booking/{id_mobil}',[BookingController::class, 'index']);
-        Route::post('/booking/proses',[BookingController::class, 'addbooking']);
+        Route::post('/booking/proses/{id}',[BookingController::class, 'addbooking']);
 
 });
 //end-auth

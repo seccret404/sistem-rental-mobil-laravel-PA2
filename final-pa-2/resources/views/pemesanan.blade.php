@@ -88,11 +88,14 @@
                  </div>
 
                  @endif
-                  <form action="/booking/proses" method="post">
+                  <form action="{{ url('/booking/proses/'.$booking->id_mobil) }}" method="POST">
                     @csrf
                     <div class="mb-3">
                         <label class="form-label">Nama</label>
                         <input type="email" class="form-control" id="nama" readonly value="{{$nama}}" name="nama" placeholder="nama...." autocomplete="off">
+                      </div>
+                      <div class="mb-3">
+                        <input type="hidden" class="form-control" id="nama" readonly value="{{$booking->id_mobil}}" name="id_mobil">
                       </div>
                     <div class="mb-3">
                         <label class="form-label">No Telepon</label>

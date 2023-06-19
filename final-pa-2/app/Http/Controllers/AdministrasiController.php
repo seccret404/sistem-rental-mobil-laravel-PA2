@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Rekap;
 use PDF;
+use App\Models\Rekap;
+use App\Models\Pemesanan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -15,8 +16,9 @@ class AdministrasiController extends Controller
         $admin = DB::table('administrasi')->get();
         $tp = DB::table('administrasi')->sum('pengeluaran');
         $profit = DB::table('administrasi')->sum('profit');
+        $users = Pemesanan::all();
 
-        return view('AdminPage.administrasi',compact('nama','admin','tp','profit'));
+        return view('AdminPage.administrasi',compact('nama','admin','tp','profit', 'users'));
     }
 
     public function adpros(Request $request){
