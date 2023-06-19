@@ -12,6 +12,7 @@ class Pemesanan extends Model
     protected $fillable = [
         'id_pesanan ',
         'id_user',
+        'id_mobil',
         'nama_pemesan',
         'no_plat',
         'nama_mobil',

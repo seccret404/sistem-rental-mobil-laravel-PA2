@@ -20,27 +20,33 @@ class BookingController extends Controller
         return view('pemesanan',compact('booking','nama','no_hp'));
     }
 
-    public function addbooking(Request $request){
+    public function addbooking(Request $request, $id){
         $sekarang = Carbon::now();
         $nama = Auth::user()->name;
         $id_user = Auth::user()->id;
+        $id_mobil = $id;
         $hp = Auth::user()->no_hp;
         $plat = $request->no_plat;
         $mobil = $request->nama_mobil;
         $alamat = $request->alamat;
         $in = $request->booking_in;
+        $ins = Carbon::parse($in);
         $out = $request->booking_out;
+        $outs = Carbon::parse($out);
         $pesan = $request->pesan;
+        // dd($ins, $outs);
+        // dd($id_mobil);
 
-        if($in < $sekarang){
-            return back()->with(['warning'=>"Tanggal tidak dapat di input,tanggal sudah kadaluarsa"]);
-        }
-        if($out < $sekarang){
-            return back()->with(['warning'=>"Tanggal tidak dapat di input,tanggal sudah kadaluarsa"]);
-        }
+        // if($ins->isBefore($sekarang)){
+        //     return back()->with(['warning'=>"Tanggal tidak dapat di input,tanggal sudah kadaluarsa"]);
+        // }
+        // if($outs->isBefore($sekarang)){
+        //     return back()->with(['warning'=>"Tanggal tidak dapat di input,tanggal sudah kadaluarsa"]);
+        // }
 
         $data = [
             'id_user'=>$id_user,
+            'id_mobil'=>$id_mobil,
             'nama_pemesan'=>$nama,
             'no_hp'=>$hp,
             'no_plat'=>$plat,

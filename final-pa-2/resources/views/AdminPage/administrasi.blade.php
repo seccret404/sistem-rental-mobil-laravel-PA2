@@ -221,33 +221,21 @@
                         <div class="col-12">
                             <div class="form-label">Nama Rentaler</div>
                             <div class="input-icon mb-3">
-                                <span class="input-icon-addon">
-                                    <!-- Download SVG icon from http://tabler-icons.io/i/user -->
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user-circle" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                        <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path>
-                                        <path d="M12 10m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
-                                        <path d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855"></path>
-                                     </svg>
-                                </span>
-                                <input type="text" value="" id="nik" name="nama_rentaler" required class="form-control"
-                                    placeholder="nama rentaler..">
+                                <select name="nama_rentaler" id="nama_pemesan" class="form-select tomselected " required>
+                                    <option  value="">--masukkan data--</option>
+                                    @foreach ($users as $user)
+                                    <option data-nama-mobil="{{$user->nama_mobil}}" {{Request('nama_pemesan')== $user->nama_pemesan ? 'selected' : ''}}
+                                        value="{{$user->nama_pemesan}}">{{$user->nama_pemesan}}</option>
+                                    @endforeach
+                                </select>
                             </div>
                         </div>
                     </div>
-
                     <div class="row mt-2">
                         <div class="col-12">
-                            <div class="form-gorup">
-                                <div class="form-label">Nama Mobil</div>
-
-                                <select name="nama" id="kode_dept" class="form-select tomselected " required>
-                                    <option value="">--masukkan data--</option>
-                                    @foreach ($nama as $item)
-                                    <option {{Request('nama_mobil')== $item->nama_mobil ? 'selected' : ''}}
-                                        value="{{$item->nama_mobil}}">{{$item->nama_mobil}}</option>
-                                    @endforeach
-                                </select>
+                            <div class="form-label">Nama Mobil</div>
+                            <div class="input-icon mb-3">
+                                <input type="text" id="nama_mobil" name="nama" readonly />
                             </div>
                         </div>
                     </div>
@@ -483,6 +471,21 @@
             scrollX: true,
         });
     });
+</script>
+<script>
+    var selectPemesan = document.getElementById('nama_pemesan');
+    var inputNamaMobil = document.getElementById('nama_mobil');
+
+    // Menambahkan event listener untuk perubahan pada elemen select
+    selectPemesan.addEventListener('change', function() {
+        // Mendapatkan nama mobil terkait dari atribut data
+        var namaMobil = selectPemesan.options[selectPemesan.selectedIndex].dataset.namaMobil;
+
+        // Mengisi nilai input nama mobil dengan nama yang dipilih
+        inputNamaMobil.value = namaMobil;
+    });
+</script>
+
 </script>
 <script>
 
