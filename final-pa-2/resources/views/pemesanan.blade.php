@@ -119,7 +119,7 @@
                             <div class="col-6">
                                 <div class="input-icon mb-2">
                                 <label class="form-label">Tanggal Berangkat</label>
-                                <input class="form-control " id="go" required name="booking_in" type="date" min="today" placeholder="Select a date" id="datepicker-icon" >
+                                <input class="form-control " id="go" required name="booking_in" type="date"  placeholder="Select a date" id="datepicker-icon" >
                                 <span class="input-icon-addon"><!-- Download SVG icon from http://tabler-icons.io/i/calendar -->
                                 </span>
                               </div>
@@ -127,7 +127,7 @@
                             <div class="col-6">
                                 <div class="input-icon mb-2">
                                     <label class="form-label">Tanggal Kembali</label>
-                                    <input class="form-control " id="back" required name="booking_out" min="today" type="date" placeholder="Select a date" id="datepicker-icon" >
+                                    <input class="form-control " id="back" required name="booking_out"type="date" placeholder="Select a date" id="datepicker-icon" >
                                     <span class="input-icon-addon"><!-- Download SVG icon from http://tabler-icons.io/i/calendar -->
                                     </span>
                                   </div>

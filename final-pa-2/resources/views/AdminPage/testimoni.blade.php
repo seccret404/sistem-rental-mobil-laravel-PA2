@@ -171,7 +171,7 @@
                     <div class="row mt-2">
                         <div class="col-12">
                             <div class="form-gorup">
-                                <div class="form-label">Nama Mobil</div>
+                                <div class="form-label">Nama Pemesan</div>
 
                                 <select name="nama_pelanggan" id="kode_dept" class="form-select tomselected " required>
                                     <option value="">--masukkan data--</option>
