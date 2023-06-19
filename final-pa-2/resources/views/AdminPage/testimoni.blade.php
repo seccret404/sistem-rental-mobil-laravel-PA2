@@ -175,9 +175,9 @@
 
                                 <select name="nama_pelanggan" id="kode_dept" class="form-select tomselected " required>
                                     <option value="">--masukkan data--</option>
-                                    @foreach ($nama as $item)
-                                    <option {{Request('nama_mobil')== $item->nama_mobil ? 'selected' : ''}}
-                                        value="{{$item->nama_mobil}}">{{$item->nama_mobil}}</option>
+                                    @foreach ($pemesanan as $item)
+                                    <option {{Request('nama_pemesan')== $item->nama_pemesan ? 'selected' : ''}}
+                                        value="{{$item->id_pesanan}}">{{$item->nama_pemesan}} / Rental pada : {{$item->booking_in}}</option>
                                     @endforeach
                                 </select>
                             </div>

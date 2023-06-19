@@ -15,4 +15,9 @@ class Testimoni extends Model
         'deskripsi',
         'gambar'
     ];
+
+    public function pesanan()
+    {
+        return $this->belongsTo(Pemesanan::class, 'id_pesanan');
+    }
 }
