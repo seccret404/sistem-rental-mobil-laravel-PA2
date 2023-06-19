@@ -5,7 +5,7 @@
         <div class="row g-2 align-items-center">
             <div class="col">
                 <div class="page-pretitle">
-                   
+
                 </div>
                 <h2 class="page-title">
                     Data Testimoni
@@ -168,21 +168,18 @@
             <div class="modal-body">
                 <form action="/testimoni-add" enctype="multipart/form-data" method="POST" id="form_karyawan">
                     @csrf
-                    <div class="row">
+                    <div class="row mt-2">
                         <div class="col-12">
-                            <div class="input-icon mb-3">
-                                <span class="input-icon-addon">
-                                    <!-- Download SVG icon from http://tabler-icons.io/i/user -->
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user-dollar" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                        <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0"></path>
-                                        <path d="M6 21v-2a4 4 0 0 1 4 -4h3"></path>
-                                        <path d="M21 15h-2.5a1.5 1.5 0 0 0 0 3h1a1.5 1.5 0 0 1 0 3h-2.5"></path>
-                                        <path d="M19 21v1m0 -8v1"></path>
-                                     </svg>
-                                </span>
-                                <input type="text" value="" id="nik" name="nama_pelanggan" class="form-control"
-                                    placeholder="nama pelanggan..">
+                            <div class="form-gorup">
+                                <div class="form-label">Nama Mobil</div>
+
+                                <select name="nama_pelanggan" id="kode_dept" class="form-select tomselected " required>
+                                    <option value="">--masukkan data--</option>
+                                    @foreach ($nama as $item)
+                                    <option {{Request('nama_mobil')== $item->nama_mobil ? 'selected' : ''}}
+                                        value="{{$item->nama_mobil}}">{{$item->nama_mobil}}</option>
+                                    @endforeach
+                                </select>
                             </div>
                         </div>
                     </div>

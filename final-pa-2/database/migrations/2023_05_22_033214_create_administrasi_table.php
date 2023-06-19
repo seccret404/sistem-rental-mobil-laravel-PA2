@@ -15,6 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('nama_rentaler');
             $table->string('nama');
+            $table->bigInteger('id_pesanan')->unsigned()->index()->nullable();
+            $table->foreign('id_pesanan')->references('id_pesanan')->on('pemesanan')->onDelete('cascade');
             $table->string('dana_dp')->nullable();
             $table->string('jmlh_hari');
             $table->string('jmlh_unit');

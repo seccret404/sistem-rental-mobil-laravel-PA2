@@ -17,7 +17,6 @@ return new class extends Migration
             $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
             $table->bigInteger('id_mobil')->unsigned()->index()->nullable();
             $table->foreign('id_mobil')->references('id_mobil')->on('mobil')->onDelete('cascade');
-
             $table->string('nama_pemesan');
             $table->string('no_plat');
             $table->string('nama_mobil');

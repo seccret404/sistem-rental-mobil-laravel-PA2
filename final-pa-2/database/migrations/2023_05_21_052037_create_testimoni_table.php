@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('testimoni', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('id_pesanan')->unsigned()->index()->nullable();
+            $table->foreign('id_pesanan')->references('id_pesanan')->on('pemesanan')->onDelete('cascade');
             $table->string('nama_pelanggan');
             $table->string('gambar');
             $table->string('deskripsi');
