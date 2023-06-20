@@ -25,7 +25,7 @@ class PemesananController extends Controller
 
     public function status(Request $request,$idPemesanan) {
 
-        
+
 
         $id_pesanan = $request->id_pesanan;
         $namaPemesan = $request->namaPemesan;
@@ -38,10 +38,20 @@ class PemesananController extends Controller
         $asalSopir = $request->asalSopir;
         $namaSopir = $request->namaSopir;
         $asalMobil = $request->asalMobil;
-        $total = $request->totalHargaBeli;
+        $total = $request->total;
         $pengeluaran = $request->pengeluaran;
         $catatan = $request->catatan;
         $diskon = $request->diskon;
+        $t = str_replace(["Rp", ".", ","], "", $total);
+        $t = str_replace(" ", "", $t);
+        $t = preg_replace('/\D/', '', $t);
+        $tt = (int) $t;
+        $p = floatval($pengeluaran);
+
+        $profit = $tt - $p;
+
+        $buktidp = $request->bukti_dp;
+
         $data = [
             'id_pesanan'=>$id_pesanan,
             'nama_rentaler'=>$namaPemesan,
@@ -55,8 +65,9 @@ class PemesananController extends Controller
             'nama_sopir'=>$namaSopir,
             'pengeluaran'=>$pengeluaran,
             'deskripsi'=>$catatan,
-            'profit'=>2,
-            'toal_harga_beli'=>$total
+            'profit'=>$profit,
+            'toal_harga_beli'=>$total,
+            'bukti_dp'=>$buktidp
         ];
 
 
@@ -64,7 +75,7 @@ class PemesananController extends Controller
         $simpan = DB::table('administrasi')->insert($data);
         if($simpan){
                 Pemesanan::where('id_pesanan', $idPemesanan)
-        ->update(['status' => 1]);
+        ->update(['status' => 1,'total_harga_beli'=>$total]);
 
         return redirect()->route('pemesanan')->with('success', 'Pemesanan berhasil dikonfirmasi');
 

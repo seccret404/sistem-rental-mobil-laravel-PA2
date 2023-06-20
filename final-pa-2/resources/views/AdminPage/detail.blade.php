@@ -31,24 +31,24 @@
                                             <tr>
                                                 <th>Nama Pemesan</th>
                                                 <td>
-                                                    <input type="text" name="id_pesanan" value="{{$idPemesanan->id_pesanan}}" hidden>
-                                                    <input type="text" name="namaPemesan" value="{{ $idPemesanan->nama_pemesan }} "></td>
+                                                    <input type="text" class="form-control" name="id_pesanan" value="{{$idPemesanan->id_pesanan}}" hidden>
+                                                    <input type="text" class="form-control" name="namaPemesan" value="{{ $idPemesanan->nama_pemesan }} "></td>
                                             </tr>
                                             <tr>
                                                 <th>Nama Mobil</th>
-                                                <td><input type="text" name="namaMobil" value="{{ $idPemesanan->nama_mobil }}"></td>
+                                                <td><input type="text" class="form-control" name="namaMobil" value="{{ $idPemesanan->nama_mobil }}"></td>
                                             </tr>
                                             <tr>
                                                 <th>Tanggal Mulai</th>
-                                                <td><input type="text" name="boIn" value="{{ $idPemesanan->booking_in }}"></td>
+                                                <td><input type="text" class="form-control" name="boIn" value="{{ $idPemesanan->booking_in }}"></td>
                                             </tr>
                                             <tr>
                                                 <th>Tanggal Akhir</th>
-                                                <td><input type="text" name="boOut" value="{{ $idPemesanan->booking_out }}"></td>
+                                                <td><input type="text" class="form-control" name="boOut" value="{{ $idPemesanan->booking_out }}"></td>
                                             </tr>
                                             <tr>
                                                 <th>Harga Perhari</th>
-                                                <td><input  name="hargaHari" value="12"></td>
+                                                <td><input  name="hargaHari" class="form-control" value="{{$idPemesanan->harga_perhari}}"></td>
                                             </tr>
                                             <tr>
                                                 @php
@@ -59,52 +59,82 @@
                                                 $diffInSeconds = $bookingOut - $bookingIn;
                                                 $diffInDays = floor($diffInSeconds / (60 * 60 * 24));
                                                 // dd($diffInDays);
-                                                @endphp
 
+                                                $dp = ($idPemesanan->harga_perhari * $idPemesanan->jumlah_unit * $diffInDays)/2;
+
+                                                $harga = ($idPemesanan->harga_perhari  * $idPemesanan->jumlah_unit * $diffInDays) - $dp;
+
+                                                @endphp
                                                 <th>Jumlah Hari</th>
-                                                <td><input type="number" name="totalHari" value="{{ $diffInDays }}"></td>
+                                                <td><input type="number" class="form-control" name="totalHari" value="{{ $diffInDays }}"></td>
                                             </tr>
                                             <tr>
                                                 <th>Jumlah Unit</th>
-                                                <td><input type="number" name="jumlahUnit" value="1"></td>
+                                                <td><input type="number" class="form-control" name="jumlahUnit" value="{{$idPemesanan->jumlah_unit}}"></td>
                                             </tr>
 
                                             <tr>
                                                 <th>Menggunakan Sopir</th>
-                                                <td><input type="text" name="asalSopir" value="Marsada"></td>
+                                                <td><input type="text" class="form-control" name="asalSopir" value="{{$idPemesanan->asal_mobil}}"></td>
                                             </tr>
                                             <tr>
                                                 <th>Nama Sopir</th>
-                                                <td><input type="text" name="namaSopir" value="Marsada"></td>
+                                                <td><input type="text" required class="form-control" name="namaSopir" value=""> </td>
                                             </tr>
                                             <tr>
                                                 <th>Asal Mobil</th>
-                                                <td><input type="text" name="asalMobil" value="Marsada"></td>
+                                                <td><input type="text" class="form-control" name="asalMobil" value="{{$idPemesanan->asal_mobil}}"></td>
                                             </tr>
                                             <tr>
-                                                <th>Dikson</th>
-                                                <td><input type="text" name="dikson" value="diskon"></td>
+                                                <th>Diskon</th>
+                                                <input type="number" name="" id="" hidden value="{{$harga}}">
+                                                <td><input type="number" class="form-control" id="diskon" name="diskon" value="" placeholder="masukkan angka persenannya saja"></td>
                                             </tr>
+
+                                            <tr>
+                                                <th>Total Dana DP</th>
+                                                <td><input type="number" class="form-control" name="dp" value="{{$dp}}" placeholder=""></td>
+                                            </tr>
+
                                             <tr>
                                                 <th>Total Harga Beli</th>
-                                                <td><input type="text" name="totalHargaBeli" value="1"></td>
+                                                <td><input type="text" class="form-control" name="total" readonly id="total" value="" placeholder="0"></td>
                                             </tr>
+                                            <script>
+                                                // Mendapatkan referensi elemen input diskon dan total
+                                                var diskonInput = document.getElementById('diskon');
+                                                var totalInput = document.getElementById('total');
+
+                                                // Mengatur event listener untuk perubahan pada input diskon
+                                                diskonInput.addEventListener('input', function() {
+                                                    var diskon = parseFloat(diskonInput.value);
+                                                    var harga = {{ $harga }}; // Ambil nilai harga dari Laravel
+
+                                                    // Menghitung ulang nilai total berdasarkan diskon
+                                                    var hasil = harga * ((diskon / 100));
+                                                    var total = harga - hasil;
+                                                    var totalFormatted = total.toLocaleString('id-ID', { style: 'currency', currency: 'IDR' });
+                                                    totalInput.value = totalFormatted;
+                                                    // totalInput.value = total.toFixed(0); // Menampilkan total dengan 2 angka desimal
+                                                });
+                                            </script>
                                             <tr>
                                                 <th>Bukti Pembayaran</th>
-                                                <td><input type="text" value="image"></td>
+                                                <td><a href="{{url('asset/pemesanan/'.$idPemesanan->bukti_dp)}}">Lihat Bukti Pembayaran</a>
+                                                    <input type="text" class="form-control" name="bukti_dp" hidden value="{{url('asset/pemesanan/'.$idPemesanan->bukti_dp)}}"></td>
                                             </tr>
                                             <tr>
                                                 <th>Pengeluaran Marsada</th>
-                                                <td><input type="number" name="pengeluaran" value="5000000"></td>
+                                                <td><input type="number" class="form-control" name="pengeluaran"></td>
                                             </tr>
                                             <tr>
                                                 <th>Catatan</th>
-                                                <td><input type="text" name="catatan" value="okealh"></td>
+                                                <td><textarea class="form-control" name="catatan" value=""></textarea></td>
                                             </tr>
                                         </table>
 
 
-                                                <button type="submit" class="btn btn-primary">Konfirmasi</button>
+                                                <button type="submit" class="btn btn-primary ">Konfirmasi</button>
                                             </form>
                                             <form action="{{ url('/pemesanan-status/delete/'.$idPemesanan->id_pesanan) }}" method="POST">
                                                 @csrf

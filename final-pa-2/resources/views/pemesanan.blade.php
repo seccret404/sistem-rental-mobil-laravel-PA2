@@ -60,6 +60,12 @@
                                 <li>
                                     Terakhir, dengan klik <b>Rental</b>data akan segera dikirimkan ke Marsadatrip melalui whatsapp untuk melakukan konfirmasi dan negoisasi harga.
                                 </li>
+                                <li class="bg-light" style="list-style-type: none;padding:5px">
+                                   <strong > Untuk melakukan Transaksi DP, kirimkan ke nomor VA Shopee dibawah ini:</strong> <br>
+                                    <p class="text-primary  opacity-100">No. VA :  8807081397739993</p><p class="text-primary">A/N : Gilbert Marpaung</p>
+                                    <div class="text-dark"></div>
+
+                                </li>
 
                             </ol>
                             <strong><h3 class="text-center ">Horas! Marsadatrip</h31></strong>
@@ -106,12 +112,16 @@
                         <input type="text" class="form-control" id="mobil" readonly value="{{$booking->nama_mobil}}" name="nama_mobil" placeholder="-----" autocomplete="off">
                       </div>
                       <div class="mb-3">
+                        <label class="form-label">Tarif Perhari</label>
+                        <input type="text" class="form-control" id="tarif" readonly value="{{$booking->harga_perhari}}" name="harga_perhari" placeholder="-----" autocomplete="off">
+                      </div>
+                      <div class="mb-3">
                         <label class="form-label">Alamat Pelanggan</label>
                         <input type="text" class="form-control" id="alamat" required name="alamat" placeholder="jln." autocomplete="off">
                       </div>
                       <div class="mb-3">
                         <label class="form-label">Jumlah Unit</label>
-                        <input type="number" class="form-control" id="alamat" required name="jumlah_unit" min="1" autocomplete="off">
+                        <input type="number" class="form-control" id="unit" required name="jumlah_unit" min="1" autocomplete="off">
                       </div>
                       <div class="mb-3">
                         <input type="text" value="{{$booking->id_mobil}}" hidden name="id_mobil">
@@ -122,7 +132,7 @@
                             <div class="col-6">
                                 <div class="input-icon mb-2">
                                 <label class="form-label">Tanggal Berangkat</label>
-                                <input class="form-control " id="go" required name="booking_in" type="date"  placeholder="Select a date" id="datepicker-icon" >
+                                <input class="form-control " id="booin" required name="booking_in" onchange="hitung()" type="date"  placeholder="Select a date" id="datepicker-icon" >
                                 <span class="input-icon-addon"><!-- Download SVG icon from http://tabler-icons.io/i/calendar -->
                                 </span>
                               </div>
@@ -130,13 +140,34 @@
                             <div class="col-6">
                                 <div class="input-icon mb-2">
                                     <label class="form-label">Tanggal Kembali</label>
-                                    <input class="form-control " id="back" required name="booking_out"type="date" placeholder="Select a date" id="datepicker-icon" >
+                                    <input class="form-control " id="booout" required name="booking_out"type="date" onchange="hitung()" placeholder="Select a date" id="datepicker-icon" >
                                     <span class="input-icon-addon"><!-- Download SVG icon from http://tabler-icons.io/i/calendar -->
                                     </span>
                                   </div>
                             </div>
                         </div>
                       </div>
+                      <p id="hasil"></p>
+
+                      <script>
+                        function hitung() {
+                            var booIn = new Date(document.getElementById("booin").value);
+                            var booOut = new Date(document.getElementById("booout").value);
+                            var hp = document.getElementById("tarif").value;
+                            var unit = document.getElementById("unit").value;
+
+                            // Menghitung selisih hari
+                            var selisihHari = (booOut - booIn) / (1000 * 3600 * 24);
+
+                            // Mengalikan dengan 3
+                            var hasil = (selisihHari * hp * unit)/2;
+
+                            var hasilRupiah = hasil.toLocaleString('id-ID', { style: 'currency', currency: 'IDR' });
+
+                            // Menampilkan hasil di HTML
+                            document.getElementById("hasil").textContent = "Total DP yang harus Dibayarkan: " + hasilRupiah;
+                        }
+                        </script>
                       <div>
                         <div class="row">
                             <div class="col-12">

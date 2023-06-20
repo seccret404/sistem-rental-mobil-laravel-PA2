@@ -43,15 +43,16 @@ class BookingController extends Controller
         $outs = Carbon::parse($out);
         $pesan = $request->pesan;
         $image = $cars->gambar;
-        // dd($ins, $outs);
-        // dd($id_mobil);
+        $harga_perhari = $request->harga_perhari;
+        $asal_sopir = $request->asal_sopir;
 
-        // if($ins->isBefore($sekarang)){
-        //     return back()->with(['warning'=>"Tanggal tidak dapat di input,tanggal sudah kadaluarsa"]);
-        // }
-        // if($outs->isBefore($sekarang)){
-        //     return back()->with(['warning'=>"Tanggal tidak dapat di input,tanggal sudah kadaluarsa"]);
-        // }
+        $booking_in = strtotime($request->booking_in);
+        $booking_out = strtotime($request->booking_out);
+
+        $hari = ($booking_out - $booking_in) / (60 * 60 * 24);
+
+        $ht = $hari *1;
+
 
         $data = [
             'id_user'=>$id_user,
@@ -66,12 +67,16 @@ class BookingController extends Controller
             'pesan'=>$pesan,
             'image'=>$image,
             'bukti_dp'=>$namafile,
-            'jumlah_unit'=>$jumlah_unit
+            'jumlah_unit'=>$jumlah_unit,
+            'harga_perhari'=>$harga_perhari,
+            'asal_sopir'=>$asal_sopir,
+            'total_harga_beli'=>$ht,
+
 
         ];
 
         $idPemesanan = DB::table('pemesanan')->insertGetId($data);
-        $format = "H O R A S M A R S A D A T R I P\nNo.Pesanan: $idPemesanan\nNama : $nama\nNo.Hp : $hp\nAlamat :$alamat\nIngin memesan mobil :$mobil\nJumlah Unit: $jumlah_unit\n Tanggal berangkat : $in\nTanggal Kembali :$out\nTerimakasih";
+        $format = "H O R A S M A R S A D A T R I P\nNo.Pesanan: $idPemesanan\nNama : $nama\nNo.Hp : $hp\nAlamat :$alamat\nIngin memesan mobil :$mobil\nJumlah Unit: $jumlah_unit\n Tanggal berangkat : $in\nTanggal Kembali :$out\nTerimakasih\nAsal Sopir: $asal_sopir\n";
 
 
         $apiUrl = "https://api.whatsapp.com/send?phone=+6285373566250&text=" . urlencode($format);

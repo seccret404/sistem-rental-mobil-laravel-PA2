@@ -19,6 +19,8 @@ return new class extends Migration
             $table->foreign('id_mobil')->references('id_mobil')->on('mobil')->onDelete('cascade');
             $table->string('nama_pemesan');
             $table->string('asal_mobil');
+            $table->string('harga_perhari');
+            $table->string('total_harga_beli')->nullable();
             $table->string('asal_sopir');
             $table->string('bukti_dp');
             $table->string('jumlah_unit');
