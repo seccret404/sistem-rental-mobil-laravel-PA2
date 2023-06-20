@@ -18,7 +18,7 @@ class MobilController extends Controller
         $request->validate([
             'nama_mobil' => ['required','max:8000'],
             'lokasi'=>['required'],
-            'no_plat'=>['required'],
+            'asal_mobil'=>['required'],
             'kapasitas'=>['required'],
             'tipe_mobil'=>['required'],
             'ac'=>['required'],
@@ -35,7 +35,8 @@ class MobilController extends Controller
         $mobil->id_mobil = $request->id_mobil;
         $mobil->nama_mobil = $request->nama_mobil;
         $mobil->lokasi = $request->lokasi;
-        $mobil->no_plat = $request->no_plat;
+        $mobil->asal_mobil = $request->asal_mobil;
+        $mobil->harga_perhari = $request->harga_perhari;
         $mobil->kapasitas = $request->kapasitas;
         $mobil->tipe_mobil = $request->tipe_mobil;
         $mobil->ac = $request->ac;
@@ -67,7 +68,7 @@ class MobilController extends Controller
 
             if ($mobil) {
                 $mobil->delete(); // Use the delete() method provided by Eloquent
-        
+
                 return redirect('/mobil')->with(['success' => "Mobil Berhasil Di Hapus!"]);
             } else {
                 return redirect('/mobil')->with(['error' => "Gagal Di Hapus!"]);

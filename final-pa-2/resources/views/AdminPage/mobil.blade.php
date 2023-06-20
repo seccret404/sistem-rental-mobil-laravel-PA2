@@ -5,7 +5,7 @@
         <div class="row g-2 align-items-center">
             <div class="col">
                 <div class="page-pretitle">
-                   
+
                 </div>
                 <h2 class="page-title">
                     Data Mobil
@@ -89,6 +89,7 @@
                                         <tr>
                                             <th>No</th>
                                             <th>Nama Mobil</th>
+                                            <th>Harga Perhari</th>
                                             <th>Tipe Mobil</th>
                                             <th>No Plat</th>
                                             <th>Lokasi</th>
@@ -101,8 +102,9 @@
                                         <tr>
                                             <td>{{$loop->iteration }}</td>
                                             <td>{{$item->nama_mobil}}</td>
+                                            <td>{{$item->harga_perhari}}</td>
                                             <td>{{$item->tipe_mobil}}</td>
-                                            <td>{{$item->no_plat}}</td>
+                                            <td>{{$item->asal_mobil}}</td>
                                             <td>{{$item->lokasi}}</td>
                                             <td>{{$item->kapasitas}}</td>
                                         <td>
@@ -146,20 +148,7 @@
 </div>
 </div>
 {{--modal edit --}}
-<div class="modal modal-blur fade" id="modaledit_karyawan" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Edit Data</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body" id="loadeditform">
 
-            </div>
-
-        </div>
-    </div>
-</div>
 {{-- modal add --}}
 <div class="modal modal-blur fade" id="modal_karyawan" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -194,6 +183,22 @@
                             <div class="input-icon mb-3">
                                 <span class="input-icon-addon">
                                     <!-- Download SVG icon from http://tabler-icons.io/i/user -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-receipt-2" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                        <path d="M5 21v-16a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v16l-3 -2l-2 2l-2 -2l-2 2l-2 -2l-3 2"></path>
+                                        <path d="M14 8h-2.5a1.5 1.5 0 0 0 0 3h1a1.5 1.5 0 0 1 0 3h-2.5m2 0v1.5m0 -9v1.5"></path>
+                                     </svg>
+                                </span>
+                                <input type="number" value="" id="nik" name="harga_perhari" class="form-control"
+                                    placeholder="Harga mobil perhari">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="input-icon mb-3">
+                                <span class="input-icon-addon">
+                                    <!-- Download SVG icon from http://tabler-icons.io/i/user -->
                                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-map-pin-exclamation" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                         <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                                         <path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0"></path>
@@ -220,8 +225,8 @@
                                         <path d="M15 8l0 8"></path>
                                      </svg>
                                 </span>
-                                <input type="text" value="" id="jabatan" name="no_plat" class="form-control"
-                                    placeholder="no_plat..">
+                                <input type="text" value="" id="jabatan" name="asal_mobil" class="form-control"
+                                    placeholder="Asal Mobil">
                             </div>
                         </div>
                     </div>

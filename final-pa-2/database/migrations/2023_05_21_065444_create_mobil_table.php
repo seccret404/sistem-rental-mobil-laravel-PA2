@@ -15,7 +15,8 @@ return new class extends Migration
             $table->id('id_mobil');
             $table->string('nama_mobil');
             $table->string('lokasi');
-            $table->string('no_plat');
+            $table->string('harga_perhari');
+            $table->string('asal_mobil');
             $table->string('ac');
             $table->string('tipe_mobil');
             $table->string('kapasitas');

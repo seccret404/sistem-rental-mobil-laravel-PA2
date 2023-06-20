@@ -14,8 +14,9 @@ class Mobil extends Model
     protected $fillable = [
         'nama_mobil',
         'lokasi',
-        'no_plat',
-        'kapasitas'
+        'asal_mobil',
+        'kapasitas',
+        'harga_perhari'
     ];
     protected $primaryKey = 'id_mobil';
 

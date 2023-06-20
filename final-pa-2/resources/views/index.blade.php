@@ -223,9 +223,10 @@
                             </div>
                             <div class="listing-contents h-100">
                                 <h3>{{$item->nama_mobil}}</h3>
-                                {{-- <div class="rent-price">
-                  <strong>$389.00</strong><span class="mx-1">/</span>day
-                </div> --}}
+                                <div class="rent-price">
+                                    <strong>Rp.{{number_format($item->harga_perhari)}}</strong>
+                                    <span class="mx-1">/</span>Hari
+                                    </div>
                                 <div class="d-block d-md-flex mb-3 border-bottom pb-3">
                                     <div class="listing-feature pr-3">
                                         <span class="caption">Kapasitas:</span>
