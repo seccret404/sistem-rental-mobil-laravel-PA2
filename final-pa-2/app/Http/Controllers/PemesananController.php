@@ -15,14 +15,18 @@ class PemesananController extends Controller
     }
 
     public function detail($id) {
+        if (!auth()->check()) {
+            return redirect()->route('login')->with('redirectPath', route('barang.index'));
+        }
+
         $idPemesanan = DB::table('pemesanan')->where('id_pesanan', $id)->first();
-
-
-
         return view('AdminPage.detail', compact('idPemesanan'));
     }
 
     public function status(Request $request,$idPemesanan) {
+
+        
+
         $id_pesanan = $request->id_pesanan;
         $namaPemesan = $request->namaPemesan;
         $namaMobil = $request->namaMobil;
@@ -54,7 +58,7 @@ class PemesananController extends Controller
             'profit'=>2,
             'toal_harga_beli'=>$total
         ];
-      
+
 
 
         $simpan = DB::table('administrasi')->insert($data);

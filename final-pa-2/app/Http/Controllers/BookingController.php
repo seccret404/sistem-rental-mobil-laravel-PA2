@@ -21,6 +21,13 @@ class BookingController extends Controller
     }
 
     public function addbooking(Request $request, $id){
+
+        $file = $request->file('bukti_dp');
+        $namafile = $file->getClientOriginalName();
+        $tujuanFile = 'asset/pemesanan';
+        $file->move($tujuanFile,$namafile);
+        $jumlah_unit = $request->jumlah_unit;
+        $asal_mobil = $request->asal_mobil;
         $cars = Mobil::find($id);
         $sekarang = Carbon::now();
         $nama = Auth::user()->name;
@@ -51,17 +58,20 @@ class BookingController extends Controller
             'id_mobil'=>$id_mobil,
             'nama_pemesan'=>$nama,
             'no_hp'=>$hp,
-            'no_plat'=>$plat,
+            'asal_mobil'=>$asal_mobil,
             'nama_mobil'=>$mobil,
             'alamat'=>$alamat,
             'booking_in'=>$in,
             'booking_out'=>$out,
             'pesan'=>$pesan,
             'image'=>$image,
+            'bukti_dp'=>$namafile,
+            'jumlah_unit'=>$jumlah_unit
+
         ];
 
         $idPemesanan = DB::table('pemesanan')->insertGetId($data);
-        $format = "H O R A S M A R S A D A T R I P\nNo.Pesanan: $idPemesanan\nNama : $nama\nNo.Hp : $hp\nAlamat :$alamat\nIngin memesan mobil :$mobil\nTanggal berangkat : $in\nTanggal Kembali :$out\nTerimakasih";
+        $format = "H O R A S M A R S A D A T R I P\nNo.Pesanan: $idPemesanan\nNama : $nama\nNo.Hp : $hp\nAlamat :$alamat\nIngin memesan mobil :$mobil\nJumlah Unit: $jumlah_unit\n Tanggal berangkat : $in\nTanggal Kembali :$out\nTerimakasih";
 
 
         $apiUrl = "https://api.whatsapp.com/send?phone=+6285373566250&text=" . urlencode($format);

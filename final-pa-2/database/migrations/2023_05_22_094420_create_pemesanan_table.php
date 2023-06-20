@@ -18,7 +18,10 @@ return new class extends Migration
             $table->bigInteger('id_mobil')->unsigned()->index()->nullable();
             $table->foreign('id_mobil')->references('id_mobil')->on('mobil')->onDelete('cascade');
             $table->string('nama_pemesan');
-            $table->string('no_plat');
+            $table->string('asal_mobil');
+            $table->string('asal_sopir');
+            $table->string('bukti_dp');
+            $table->string('jumlah_unit');
             $table->string('nama_mobil');
             $table->string('no_hp');
             $table->string('alamat');

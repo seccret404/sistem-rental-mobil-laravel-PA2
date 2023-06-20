@@ -12,11 +12,13 @@ class Pemesanan extends Model
     protected $table = 'pemesanan';
     protected $fillable = [
         'id_pesanan ',
+        'bukti_dp',
         'id_user',
         'id_mobil',
         'nama_pemesan',
-        'no_plat',
+        'asal_mobil',
         'nama_mobil',
+        'asal_sopir',
         'no_hp',
         'alamat',
         'booking_in',

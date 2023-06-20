@@ -88,7 +88,7 @@
                  </div>
 
                  @endif
-                  <form action="{{ url('/booking/proses/'.$booking->id_mobil) }}" method="POST">
+                  <form action="{{ url('/booking/proses/'.$booking->id_mobil) }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="mb-3">
                         <label class="form-label">Nama</label>
@@ -102,17 +102,20 @@
                         <input type="email" class="form-control" id="hp" readonly value="{{$no_hp}}" name="no_hp" placeholder="08***" autocomplete="off">
                       </div>
                       <div class="mb-3">
-                        <label class="form-label">Alamat</label>
+                        <label class="form-label">Nama Mobil</label>
+                        <input type="text" class="form-control" id="mobil" readonly value="{{$booking->nama_mobil}}" name="nama_mobil" placeholder="-----" autocomplete="off">
+                      </div>
+                      <div class="mb-3">
+                        <label class="form-label">Alamat Pelanggan</label>
                         <input type="text" class="form-control" id="alamat" required name="alamat" placeholder="jln." autocomplete="off">
                       </div>
                       <div class="mb-3">
-                        <label class="form-label">Plat Mobil</label>
-                        <input type="text" value="{{$booking->id_mobil}}" hidden name="id_mobil">
-                        <input type="text" class="form-control" id="plat" readonly value="{{$booking->no_plat}}" name="no_plat" placeholder="-----" autocomplete="off">
+                        <label class="form-label">Jumlah Unit</label>
+                        <input type="number" class="form-control" id="alamat" required name="jumlah_unit" min="1" autocomplete="off">
                       </div>
                       <div class="mb-3">
-                        <label class="form-label">Nama Mobil</label>
-                        <input type="text" class="form-control" id="mobil" readonly value="{{$booking->nama_mobil}}" name="nama_mobil" placeholder="-----" autocomplete="off">
+                        <input type="text" value="{{$booking->id_mobil}}" hidden name="id_mobil">
+                        <input type="text" class="form-control" id="plat" readonly value="{{$booking->asal_mobil}}" name="asal_mobil" hidden autocomplete="off">
                       </div>
                       <div class="mb-3">
                         <div class="row">
@@ -135,7 +138,30 @@
                         </div>
                       </div>
                       <div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="input-icon mb-3">
+                                    <div class="mb-3">
+                                        <div class="form-label">Mengunakan Sopir Marsadatrip</div>
+                                        <div>
+                                          <label class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" value="Marsada" name="asal_sopir" checked="">
+                                            <span class="form-check-label">Ya</span>
+                                          </label>
+                                          <label class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio"value="Rentaler" name="asal_sopir">
+                                            <span class="form-check-label">Tidak</span>
+                                          </label>
+                                        </div>
+                                      </div>
+                                </div>
+                            </div>
+                        </div>
                       <img src="{{  url('asset/mobil/'.$booking->gambar) }}" alt="{{  url('asset/mobil/'.$booking->gambar) }}" style="display: none;" name="image">
+                      <div class="mb-3">
+                        <label class="form-label">Bukti Transaksi</label>
+                        <input type="file" class="form-control" required name="bukti_dp"  autocomplete="off">
+                      </div>
                       <div class="mb-3">
                         <label class="form-label">Pesan</label>
                         <textarea class="form-control" name="pesan" rows="5">
