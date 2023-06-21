@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Models\Mobil;
+use App\Models\Pemesanan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -43,6 +45,28 @@ class MobilController extends Controller
         $mobil->kapasitas = $request->kapasitas;
         $mobil->gambar = $namafile;
         $mobil->save();
+
+        // $bookingIn = Carbon::now();
+        // $bookingOut = Carbon::now();
+
+        // $pemesanan = new Pemesanan;
+        // $pemesanan->id_mobil = $mobil->id_mobil;
+        // $pemesanan->nama_pemesan = "";
+        // $pemesanan->asal_mobil = "";
+        // $pemesanan->harga_perhari = "";
+        // $pemesanan->total_harga_beli = "";
+        // $pemesanan->asal_sopir = "";
+        // $pemesanan->bukti_dp = "";
+        // $pemesanan->jumlah_unit = "";
+        // $pemesanan->nama_mobil = "";
+        // $pemesanan->no_hp = "";
+        // $pemesanan->alamat = "";
+        // $pemesanan->booking_in = $bookingIn;
+        // $pemesanan->booking_out = $bookingOut;
+        // $pemesanan->pesan = "";
+        // $pemesanan->image = "";
+        // $pemesanan->status = 9;
+        // $pemesanan->save();
 
         return redirect('/mobil')->with(['success'=>"Mobil berhasil ditambah"]);
 }

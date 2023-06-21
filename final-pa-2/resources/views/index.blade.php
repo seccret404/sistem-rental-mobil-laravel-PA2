@@ -249,9 +249,8 @@
                                         </p>
                                     </span>
 
-                                        <p><a href="/booking/{{$item->id_mobil}}" class="btn btn-primary btn-sm"
-                                            type="submit">Rental</a></p>
-
+                                    <p><a href="/booking/{{$item->id_mobil}}" class="btn btn-primary btn-sm"
+                                        type="submit">Rental</a></p>         
                                 </div>
                             </div>
 

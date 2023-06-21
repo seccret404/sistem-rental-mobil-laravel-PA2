@@ -21,6 +21,6 @@ class Mobil extends Model
     protected $primaryKey = 'id_mobil';
 
     public function pemesanans() {
-        return $this->hasMany(Pemesanan::class, 'id_mobil', 'id_mobil');
+        return $this->hasOne(Pemesanan::class, 'id_mobil', 'id_mobil');
     }
 }

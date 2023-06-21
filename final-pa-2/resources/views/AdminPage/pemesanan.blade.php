@@ -39,56 +39,54 @@
                         </div>
                         <div class="row mt-4">
                             <table class="table table-bordered">
-                                <div class="col-12">
-                                    <thead>
-                                        <tr>
-                                            <th>No</th>
-                                            <th>Nama Pelangkan</th>
-                                            <th>Nama Mobil</th>
-                                            <th>Tanggal Mulai</th>
-                                            <th>Tanggal Akhir</th>
-                                            <th>Status</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @php
-                                            $counter = 1;
-                                        @endphp
-                                         @foreach ($pemesananList as $item)
+                                <thead>
+                                    <tr>
+                                        <th>No</th>
+                                        <th>Nama Pelanggan</th>
+                                        <th>Nama Mobil</th>
+                                        <th>Tanggal Mulai</th>
+                                        <th>Tanggal Akhir</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @php
+                                        $counter = 1;
+                                    @endphp
+                                    @foreach ($pemesananList as $item)
                                         @if($item->status == 0)
-                                        <tr>
-                                            <td>{{$counter }}</td>
-                                            <td>{{$item->nama_pemesan }}</td>
-                                            <td>{{$item->nama_mobil}}</td>
-                                            <td>{{$item->booking_in}}</td>
-                                            <td>{{$item->booking_out}}</td>
-                                            <td>
-                                                @if($item->status == 0)
-                                                    <a href="{{ url('/pemesanan/'.$item->id_pesanan) }}"><button type="submit" class="btn btn-primary">Detail</button></a>
-                                                @else
-
-                                                    <button type="submit" class="btn btn-primary" disabled >Terkonfirmasi</button>
-
-                                                @endif
-                                            </td>
-                                        </tr>
-                                        @else
-                                        <tr>
-                                            <td colspan="6" class="text-center">Tidak ada data</td>
-                                        </tr>
+                                            <tr>
+                                                <td>{{ $counter }}</td>
+                                                <td>{{ $item->nama_pemesan }}</td>
+                                                <td>{{ $item->nama_mobil }}</td>
+                                                <td>{{ $item->booking_in }}</td>
+                                                <td>{{ $item->booking_out }}</td>
+                                                <td>
+                                                    @if($item->status == 0)
+                                                        <a href="{{ url('/pemesanan/'.$item->id_pesanan) }}"><button type="submit" class="btn btn-primary">Detail</button></a>
+                                                    @else
+                                                        <button type="submit" class="btn btn-primary" disabled>Terkonfirmasi</button>
+                                                    @endif
+                                                </td>
+                                            </tr>
                                         @endif
                                         @php
                                             $counter++;
                                         @endphp
-                                        @endforeach
-
-                                    </tbody>
+                                    @endforeach
+                                    @if($item->status != 0)
+                                        <tr>
+                                            <td colspan="6" class="text-center">Tidak ada data</td>
+                                        </tr>
+                                    @endif
+                                </tbody>
                             </table>
+                            
                         </div>
                         <div class="col-12">
                             <div class="row row-cards row-deck">
                             @foreach ($pemesananList as $p)
-                                @if($p->status !=0)
+                                @if($p->status == 1)
                                 <div class="col-4">
                                     <div class="card">
                                     <div class="card-header">
@@ -102,7 +100,14 @@
                                         <h5>Nama Pemesan : {{ $p->nama_pemesan }}</h5>
                                     </div>
                                     <div class="card-footer">
-                                        <button class="btn btn-info">Sedang Berjalan</button>
+                                        <div class="row">
+                                            <div class="col">
+                                                <button class="btn btn-info" disabled>Sedang Berjalan</button>
+                                            </div>
+                                            <div class="col">
+                                                <a href="{{ url('/finish/'.$p->id_pesanan) }}"><button class="btn btn-success">Selesai</button></a>
+                                            </div>
+                                        </div>
                                     </div>
                                  </div>
                                 </div>

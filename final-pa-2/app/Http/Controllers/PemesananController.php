@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Models\Pemesanan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -50,7 +51,6 @@ class PemesananController extends Controller
 
         $profit = $tt - $p;
 
-        $buktidp = $request->bukti_dp;
 
         $data = [
             'id_pesanan'=>$id_pesanan,
@@ -67,7 +67,6 @@ class PemesananController extends Controller
             'deskripsi'=>$catatan,
             'profit'=>$profit,
             'toal_harga_beli'=>$total,
-            'bukti_dp'=>$buktidp
         ];
 
 
@@ -96,5 +95,15 @@ class PemesananController extends Controller
         $pesanans = Pemesanan::where('id_user', Auth::user()->id)->get()->sortByDesc('updated_at');
 
         return view('history-book', compact('pesanans'));
+    }
+
+    public function detailHistory($id) {
+        $detailHistory = Pemesanan::where('id_pesanan', $id)->first();
+        return view('detail-history', compact('detailHistory'));
+    }
+
+    public function finish($id_pesanan) {
+        Pemesanan::where('id_pesanan', $id_pesanan)->update(['status' => 4]);
+        return redirect()->route('pemesanan');
     }
 }

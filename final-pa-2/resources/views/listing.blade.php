@@ -156,12 +156,8 @@
                                         <span class="icon-map"></span> &nbsp;{{$item->lokasi}}
 
                                         @auth
-                                        <p><a href="/booking/{{$item->id_mobil}}" class="btn btn-primary btn-sm"
+                                            <p><a href="/booking/{{$item->id_mobil}}" class="btn btn-primary btn-sm"
                                             type="submit">Rental</a></p>
-
-                                            @else
-                                            <p><a href="/login" class="btn btn-primary btn-sm"
-                                                type="submit">Rental</a></p>
                                     @endauth
 
                                 </div>

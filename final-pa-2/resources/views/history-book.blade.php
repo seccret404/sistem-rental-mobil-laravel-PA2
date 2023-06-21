@@ -106,6 +106,7 @@
             <th scope="col">Tanggal Akhir</th>
             <th scope="col">Tanggal Awal</th>
             <th scope="col">Status</th>
+            <th scope="col">Action</th>
           </tr>
         </thead>
         <tbody>
@@ -120,11 +121,14 @@
                   Pesanan mobil anda belum di konfirmasi
                  @endif
                  @if($pesanan->status == 1)
-                  Pesanan mobil anda telah di konfirmasi
+                  Pesanan mobil anda telah di konfirmasi        
                  @endif
                  @if($pesanan->status == 2)
                   Mobil anda sedang dalam perjalanan
                  @endif
+              </td>
+              <td>
+                <a href="{{ url('/history/'.$pesanan->id_pesanan) }}"><button class="btn btn-primary" type="button">Detail</button></a>
               </td>
             </tr>
           @endforeach

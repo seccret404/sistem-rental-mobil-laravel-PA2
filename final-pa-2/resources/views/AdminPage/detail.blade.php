@@ -53,29 +53,32 @@
                                             <tr>
                                                 @php
                                                 $diffInDays = 0;
-                                                $bookingIn = strtotime($idPemesanan->booking_in);
-                                                $bookingOut = strtotime($idPemesanan->booking_out);
-
-                                                $diffInSeconds = $bookingOut - $bookingIn;
-                                                $diffInDays = floor($diffInSeconds / (60 * 60 * 24));
+                                                $bookingIn = \Carbon\Carbon::parse($idPemesanan->booking_in);
+                                                $bookingOut = \Carbon\Carbon::parse($idPemesanan->booking_out);
+                                            
+                                                $diffInDays = $bookingOut->diffInDays($bookingIn);
                                                 // dd($diffInDays);
-
-                                                $dp = ($idPemesanan->harga_perhari * $idPemesanan->jumlah_unit * $diffInDays)/2;
-
-                                                $harga = ($idPemesanan->harga_perhari  * $idPemesanan->jumlah_unit * $diffInDays) - $dp;
-
+                                            
+                                                $hargaPerHari = floatval($idPemesanan->harga_perhari);
+                                                $jumlahUnit = intval($idPemesanan->jumlah_unit);
+                                            
+                                                $dp = ($hargaPerHari * $jumlahUnit * $diffInDays) / 2;
+                                            
+                                                $harga = ($hargaPerHari * $jumlahUnit * $diffInDays) - $dp;
                                                 @endphp
                                                 <th>Jumlah Hari</th>
-                                                <td><input type="number" class="form-control" name="totalHari" value="{{ $diffInDays }}"></td>
+                                                <td><input type="number" class="form-control" name="totalHari" value="{{ $diffInDays }}" readonly></td>
                                             </tr>
+                                            
+                                            
                                             <tr>
                                                 <th>Jumlah Unit</th>
-                                                <td><input type="number" class="form-control" name="jumlahUnit" value="{{$idPemesanan->jumlah_unit}}"></td>
+                                                <td><input type="number" class="form-control" name="jumlahUnit" value="{{$idPemesanan->jumlah_unit}}" readonly></td>
                                             </tr>
 
                                             <tr>
                                                 <th>Menggunakan Sopir</th>
-                                                <td><input type="text" class="form-control" name="asalSopir" value="{{$idPemesanan->asal_mobil}}"></td>
+                                                <td><input type="text" class="form-control" name="asalSopir" value="{{$idPemesanan->asal_mobil}}" readonly></td>
                                             </tr>
                                             <tr>
                                                 <th>Nama Sopir</th>

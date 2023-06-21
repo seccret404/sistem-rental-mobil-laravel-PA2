@@ -69,6 +69,8 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
 
         Route::get('/pdf', [AdministrasiController::class, 'pdf']);
 
+        Route::get('/finish/{id_pesanan}', [PemesananController::class, 'finish']);
+
 });
 
 Route::middleware(['auth', 'role:user'])->group(function () {
@@ -84,6 +86,7 @@ Route::middleware(['auth', 'role:user'])->group(function () {
         Route::post('/booking/proses/{id}',[BookingController::class, 'addbooking']);
 
         Route::get('/history', [PemesananController::class, 'history']);
+        Route::get('/history/{id}', [PemesananController::class, 'detailHistory']);
 
 });
 //end-auth
